@@ -44,7 +44,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="foregroundImage" value="$PROJECT_DIR$/app/src/main/res/infotsav/infotsav_icon.png" />
+                                      <entry key="foregroundImage" value="$PROJECT_DIR$/app/src/main/res/infotsav/infotsav_logo.jpg" />
                                       <entry key="legacyIconShape" value="CIRCLE" />
                                       <entry key="webIconShape" value="CIRCLE" />
                                     </map>
