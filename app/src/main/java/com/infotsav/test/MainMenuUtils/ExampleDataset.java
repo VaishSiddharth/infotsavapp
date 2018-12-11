@@ -66,13 +66,12 @@ public class ExampleDataset {
         dataset.add(item3);
 
         CardData item2 = new CardData();
-<<<<<<< HEAD
+
         item2.setMainBackgroundResource(R.drawable.captainamerica60port);
         item2.setHeadBackgroundResource(R.drawable.captainamerica60);
-=======
+
         item2.setMainBackgroundResource(R.drawable.nature);
         item2.setHeadBackgroundResource(R.drawable.nature_head);
->>>>>>> origin/testabhi
         item2.setHeadTitle("Sponsors");
         item2.setPersonName("Tina Caldwell");
         item2.setPersonMessage("Nunquam perdere clabulare.");

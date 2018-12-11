@@ -18,21 +18,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
+
         <activity android:name=".Main_Activities.HomeActivity" />
         <activity android:name=".Main_Activities.EventsActivity" />
         <activity android:name=".Main_Activities.RegisterActivity" />
         <activity android:name=".Main_Activities.UpdatesActivity" />
         <activity android:name=".Main_Activities.ContactusActivity" />
         <activity android:name=".Main_Activities.SponsorsActivity" />
-=======
+
         <activity android:name=".HomeActivity" />
         <activity android:name=".EventsActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".UpdatesActivity" />
         <activity android:name=".AboutusActivity" />
         <activity android:name=".SponsersActivityrsActivity" />
->>>>>>> origin/testabhi
+
         <activity android:name=".foldingView.FoldingActivity" />
         <activity android:name=".Main_Activities.TreasurehuntActivity"></activity>
         <activity android:name=".Main_Activities.AboutusActivity"></activity>
