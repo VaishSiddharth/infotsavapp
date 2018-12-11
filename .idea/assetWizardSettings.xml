@@ -18,9 +18,7 @@
                                 <PersistentState>
                                   <option name="children">
                                     <map>
-<<<<<<< HEAD
-=======
-                                      <entry key="backgroundImage">
+                                        <entry key="backgroundImage">
                                         <value>
                                           <PersistentState>
                                             <option name="values">
@@ -31,17 +29,14 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
->>>>>>> origin/testabhi
+
                                       <entry key="foregroundImage">
                                         <value>
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-<<<<<<< HEAD
-                                                <entry key="scalingPercent" value="50" />
-=======
-                                                <entry key="scalingPercent" value="67" />
->>>>>>> origin/testabhi
+                                                  <entry key="scalingPercent" value="50" />
+                                                  <entry key="scalingPercent" value="67" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -51,16 +46,13 @@
                                   </option>
                                   <option name="values">
                                     <map>
-<<<<<<< HEAD
-                                      <entry key="backgroundLayerName" value="callbutton_2" />
+                                        <entry key="backgroundLayerName" value="callbutton_2" />
                                       <entry key="foregroundImage" value="$PROJECT_DIR$/../call_button.png" />
                                       <entry key="foregroundLayerName" value="callbutton_1" />
                                       <entry key="outputName" value="callbutton" />
-=======
-                                      <entry key="foregroundImage" value="$PROJECT_DIR$/app/src/main/res/infotsav/infotsav_logo.jpg" />
+                                        <entry key="foregroundImage" value="$PROJECT_DIR$/app/src/main/res/infotsav/infotsav_logo.jpg" />
                                       <entry key="legacyIconShape" value="CIRCLE" />
                                       <entry key="webIconShape" value="CIRCLE" />
->>>>>>> origin/testabhi
                                     </map>
                                   </option>
                                 </PersistentState>
