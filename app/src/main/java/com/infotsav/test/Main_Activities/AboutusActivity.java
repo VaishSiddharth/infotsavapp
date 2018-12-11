@@ -1,6 +1,7 @@
 package com.infotsav.test.Main_Activities;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,7 +19,10 @@ public class AboutusActivity extends AppCompatActivity {
         TextView mtitle= (TextView) findViewById(R.id.t1);
 
         TextView mtext= (TextView) findViewById(R.id.t2);
-        mtitle.setText("ABOUT US");
+        mtitle.setText("INFOTSAV");
+        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/Delius-Regular.ttf");
+        mtitle.setTypeface(type);
+
         StringBuilder stringBuilder= new StringBuilder();
         String para="Infotsav is the techno-managerial fest of the institute , aimed at nurturing creativity" +
                 " and innovation among the youth in a competitive as well as a recreational manner. " +
@@ -31,6 +35,8 @@ public class AboutusActivity extends AppCompatActivity {
 
             stringBuilder.append(para);
           mtext.setText(stringBuilder.toString());
+        mtitle.setTypeface(type);
+        mtext.setTypeface(type);
     }
     public void fb(View view){
         Intent facebook=new Intent(Intent.ACTION_VIEW,Uri.parse("https://www.facebook.com/Infotsav/"));

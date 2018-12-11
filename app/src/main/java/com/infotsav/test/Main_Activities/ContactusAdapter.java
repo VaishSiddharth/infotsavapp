@@ -46,10 +46,7 @@ public class ContactusAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = View.inflate(mContext,R.layout.contactus_list,null);
         TextView person_name=(TextView)view.findViewById(R.id.person_name);
-
         TextView person_email=(TextView)view.findViewById(R.id.person_email);
-
-
         TextView person_department=(TextView)view.findViewById(R.id.person_department);
 
         AssetManager assetManager = mContext.getAssets();

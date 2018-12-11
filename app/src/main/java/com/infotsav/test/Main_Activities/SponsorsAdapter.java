@@ -1,6 +1,9 @@
 package com.infotsav.test.Main_Activities;
 
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -43,7 +46,16 @@ public class SponsorsAdapter extends BaseAdapter {
         TextView person_name=(TextView)view.findViewById(R.id.person_name);
         TextView person_email=(TextView)view.findViewById(R.id.person_email);
         TextView person_department=(TextView)view.findViewById(R.id.person_department);
-        TextView person_call=(TextView)view.findViewById(R.id.call_person_button);
+
+        AssetManager assetManager = mContext.getAssets();
+
+        final Typeface tvFont = Typeface.createFromAsset(assetManager,  "fonts/Delius-Regular.ttf");
+        person_name.setTypeface(tvFont);
+        person_email.setTypeface(tvFont);
+        person_department.setTypeface(tvFont);
+
+        person_name.setTextColor(Color.BLACK);
+
         ImageView person_image=(ImageView)view.findViewById(R.id.person_photo);
 
 

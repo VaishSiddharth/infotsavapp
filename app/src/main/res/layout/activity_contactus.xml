@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#C0C0C0"
+    android:background="#e6e6e6"
     tools:context=".Main_Activities.ContactusActivity">
 
     <ListView
