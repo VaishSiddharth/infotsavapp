@@ -8,10 +8,11 @@
     tools:context="com.infotsav.test.WelcomeActivity"
     android:orientation="vertical"
     android:background="@drawable/welcomeback">
+
     <LinearLayout
         android:id="@+id/line1"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="200dp"
         android:orientation="vertical"
         tools:ignore="InvalidId">
 
@@ -20,20 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="150dp"
-            android:text="INFOTSAV"
-            android:textColor="@color/lightorange"
-            android:textSize="60sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="50dp"
-            android:text="2019"
-            android:textAlignment="center"
-            android:textColor="@color/lightorangedark"
-            android:textSize="30sp" />
+            android:layout_marginTop="100dp"
+            android:background="@drawable/infthor"/>
 
     </LinearLayout>
 
