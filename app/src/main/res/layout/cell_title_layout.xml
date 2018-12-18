@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="30dp"
+    android:translationZ="4dp"
+    android:outlineAmbientShadowColor="@android:color/black"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="150dp"
+    android:scaleType="centerCrop"
     xmlns:tools="http://schemas.android.com/tools"
-    android:translationZ="4dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/avengersbackground"
     android:outlineAmbientShadowColor="#000000"
-    android:background="@drawable/layout_bg"
     android:orientation="horizontal">
 
     <ImageView
         android:id="@+id/event_image"
-        android:background="@drawable/layout_bg"
-        android:layout_width="500dp"
-        android:layout_height="170dp"
+        android:layout_width="550dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
         android:layout_weight="3"
-        tools:src="@+id/event_image"/>
+        tools:src="@+id/event_image"
+        android:visibility="invisible"/>
 
     <!-- LEFT TITLE PART -->
     <!--android:background="@color/bgTitleLeft"-->
@@ -97,7 +106,7 @@
             android:gravity="center"
             android:lines="2"
             android:maxLines="2"
-            android:textColor="@android:color/black"
+            android:textColor="#F9FAFC"
             android:textSize="30sp" />
         <LinearLayout
             android:layout_width="match_parent"
@@ -147,6 +156,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#F9FAFC"
             android:textSize="20dp"
             android:fontFamily="@font/captianamericafont"
             android:text="TIME" />
@@ -154,6 +164,7 @@
             android:id="@+id/time_event"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#F9FAFC"
             android:textSize="15dp"
             android:fontFamily="@font/captianamericafont"
             android:text="3:00pm"/>
@@ -173,6 +184,7 @@
             android:id="@+id/venue_event_badage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#F9FAFC"
             android:fontFamily="@font/captianamericafont"
             android:text="VENUE"
             android:textSize="20dp" />
@@ -182,6 +194,7 @@
             android:textSize="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#F9FAFC"
             android:fontFamily="@font/captianamericafont"
             android:text="@string/venue_mock"
             />
@@ -190,3 +203,4 @@
 
     </LinearLayout>
 </LinearLayout>
+</android.support.v7.widget.CardView>

@@ -93,9 +93,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         //viewHolder.head_event_image.setImageResource(item.getHead_event_image());
         String url1 =item.getHead_event_image();
         if(url1!=null) {
-            viewHolder.head_event_image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            Glide.with(getContext()).load(url1).into(viewHolder.head_event_image);//sir ek baar app phone mae chala k samaj aae ga
-            // updaed hai branch? nahi sir 2 min test mae karta hu
+            Glide.with(getContext()).load(url1).into(viewHolder.head_event_image);
 
         }
 
