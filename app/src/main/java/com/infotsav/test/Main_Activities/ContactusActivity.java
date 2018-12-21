@@ -31,7 +31,7 @@ public class ContactusActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contactus);
+        setContentView(R.layout.activity_tab_contact_us);
 
         lvcontactus=(ListView)findViewById(R.id.listview_contactus);
         mContactus_detailslist =new ArrayList<>();
