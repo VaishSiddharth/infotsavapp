@@ -21,7 +21,6 @@
         <activity android:name=".Main_Activities.EventsActivity" />
         <activity android:name=".Main_Activities.RegisterActivity" />
         <activity android:name=".Main_Activities.UpdatesActivity" />
-        <activity android:name=".Main_Activities.ContactusActivity" />
         <activity android:name=".Main_Activities.SponsorsActivity" />
         <activity android:name=".foldingView.FoldingActivity" />
         <activity android:name=".Main_Activities.TreasurehuntActivity" />
