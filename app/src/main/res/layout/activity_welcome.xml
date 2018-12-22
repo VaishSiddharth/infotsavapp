@@ -7,35 +7,29 @@
     android:layout_height="match_parent"
     tools:context="com.infotsav.test.WelcomeActivity"
     android:orientation="vertical"
-    android:background="@drawable/welcomeback">
-
+    android:weightSum="3"
+    android:background="@android:color/black">
     <LinearLayout
-        android:id="@+id/line1"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
         android:orientation="vertical"
-        tools:ignore="InvalidId">
-
-        <TextView
-            style="bold"
+        android:layout_weight="2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="100dp"
-            android:background="@drawable/infthor"/>
-
+            android:id="@+id/line1"
+            android:src="@drawable/infthor"/>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/line3"
-        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:background="@drawable/spaceillustrations"
-        android:orientation="vertical"
         tools:ignore="InvalidId">
-
     </LinearLayout>
-
 
 </LinearLayout>
