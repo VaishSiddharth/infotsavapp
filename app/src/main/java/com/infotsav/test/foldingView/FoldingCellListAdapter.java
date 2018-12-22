@@ -1,17 +1,13 @@
 package com.infotsav.test.foldingView;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,19 +24,18 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-import static com.infotsav.test.Utils.Constants.back1;
-import static com.infotsav.test.Utils.Constants.back10;
-import static com.infotsav.test.Utils.Constants.back11;
-import static com.infotsav.test.Utils.Constants.back12;
-import static com.infotsav.test.Utils.Constants.back2;
-import static com.infotsav.test.Utils.Constants.back3;
-import static com.infotsav.test.Utils.Constants.back4;
-import static com.infotsav.test.Utils.Constants.back5;
-import static com.infotsav.test.Utils.Constants.back6;
-import static com.infotsav.test.Utils.Constants.back7;
-import static com.infotsav.test.Utils.Constants.back8;
-import static com.infotsav.test.Utils.Constants.back9;
-import static com.infotsav.test.Utils.Constants.indexval;
+import static com.infotsav.test.Util.Constants.back1;
+import static com.infotsav.test.Util.Constants.back10;
+import static com.infotsav.test.Util.Constants.back11;
+import static com.infotsav.test.Util.Constants.back12;
+import static com.infotsav.test.Util.Constants.back2;
+import static com.infotsav.test.Util.Constants.back3;
+import static com.infotsav.test.Util.Constants.back4;
+import static com.infotsav.test.Util.Constants.back5;
+import static com.infotsav.test.Util.Constants.back6;
+import static com.infotsav.test.Util.Constants.back7;
+import static com.infotsav.test.Util.Constants.back8;
+import static com.infotsav.test.Util.Constants.back9;
 
 /**
  * Simple example of ListAdapter for using with Folding Cell

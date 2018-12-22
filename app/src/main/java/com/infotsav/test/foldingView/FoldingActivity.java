@@ -1,20 +1,15 @@
 package com.infotsav.test.foldingView;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,26 +23,14 @@ import com.ramotion.foldingcell.FoldingCell;
 
 import java.util.ArrayList;
 
-import static com.infotsav.test.Utils.Constants.all;
-import static com.infotsav.test.Utils.Constants.back1;
-import static com.infotsav.test.Utils.Constants.back10;
-import static com.infotsav.test.Utils.Constants.back11;
-import static com.infotsav.test.Utils.Constants.back12;
-import static com.infotsav.test.Utils.Constants.back2;
-import static com.infotsav.test.Utils.Constants.back3;
-import static com.infotsav.test.Utils.Constants.back4;
-import static com.infotsav.test.Utils.Constants.back5;
-import static com.infotsav.test.Utils.Constants.back6;
-import static com.infotsav.test.Utils.Constants.back7;
-import static com.infotsav.test.Utils.Constants.back8;
-import static com.infotsav.test.Utils.Constants.back9;
-import static com.infotsav.test.Utils.Constants.gamiacs;
-import static com.infotsav.test.Utils.Constants.managerial;
-import static com.infotsav.test.Utils.Constants.online;
-import static com.infotsav.test.Utils.Constants.onsite;
-import static com.infotsav.test.Utils.Constants.robotics;
-import static com.infotsav.test.Utils.Constants.school;
-import static com.infotsav.test.Utils.Constants.technical;
+import static com.infotsav.test.Util.Constants.all;
+import static com.infotsav.test.Util.Constants.gamiacs;
+import static com.infotsav.test.Util.Constants.managerial;
+import static com.infotsav.test.Util.Constants.online;
+import static com.infotsav.test.Util.Constants.onsite;
+import static com.infotsav.test.Util.Constants.robotics;
+import static com.infotsav.test.Util.Constants.school;
+import static com.infotsav.test.Util.Constants.technical;
 
 /**
  * Example of using Folding Cell with ListView and ListAdapter
