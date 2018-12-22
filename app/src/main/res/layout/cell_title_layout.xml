@@ -6,201 +6,201 @@
     android:translationZ="4dp"
     android:outlineAmbientShadowColor="@android:color/black"
     xmlns:android="http://schemas.android.com/apk/res/android">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:scaleType="centerCrop"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/avengersbackground"
-    android:outlineAmbientShadowColor="#000000"
-    android:orientation="horizontal">
-
-    <ImageView
-        android:id="@+id/event_image"
-        android:layout_width="550dp"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:layout_weight="3"
-        tools:src="@+id/event_image"
-        android:visibility="invisible"/>
-
-    <!-- LEFT TITLE PART -->
-    <!--android:background="@color/bgTitleLeft"-->
-    <RelativeLayout
-        android:layout_width="500dp"
-        android:layout_height="200dp"
-        android:layout_weight="3"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingBottom="20dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="20dp"
-        android:visibility="gone">
-
-
-
-        <TextView
-            android:id="@+id/title_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textColor="@android:color/white"
-            android:textSize="26sp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:id="@+id/title_time_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:id="@+id/title_date_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/title_time_label"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textColor="@android:color/white"
-            android:textSize="12sp"
-            android:visibility="gone"/>
-
-
-    </RelativeLayout>
-    <!-- RIGHT TITLE PART -->
-    <!--android:background="@color/bgTitleRight"-->
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cardbackground"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_weight="1">
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:outlineAmbientShadowColor="#000000"
+        android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/title_from_to_dots"
-            android:layout_width="15dp"
-            android:layout_height="100dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:src="@drawable/from_to_purple"
-            android:visibility="gone"/>
+            android:id="@+id/event_image"
+            android:layout_width="550dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:layout_weight="3"
+            tools:src="@+id/event_image"
+            android:visibility="invisible"/>
 
-        <TextView
-            android:id="@+id/event_detail_short"
-            android:fontFamily="@font/captianamericafont"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:ellipsize="marquee"
-            android:gravity="center"
-            android:lines="2"
-            android:maxLines="2"
-            android:textColor="#F9FAFC"
-            android:textSize="30sp" />
+        <!-- LEFT TITLE PART -->
+        <!--android:background="@color/bgTitleLeft"-->
+        <RelativeLayout
+            android:layout_width="500dp"
+            android:layout_height="200dp"
+            android:layout_weight="3"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="20dp"
+            android:visibility="gone">
+
+
+
+            <TextView
+                android:id="@+id/title_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@android:color/white"
+                android:textSize="26sp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/title_time_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/title_date_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/title_time_label"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+
+        </RelativeLayout>
+        <!-- RIGHT TITLE PART -->
+        <!--android:background="@color/bgTitleRight"-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:gravity="center">
-        <LinearLayout
-            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_gravity="center"
             android:gravity="center"
             android:layout_weight="1">
+
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/calendar"/>
+                android:id="@+id/title_from_to_dots"
+                android:layout_width="15dp"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/from_to_purple"
+                android:visibility="gone"/>
 
-        <ImageView
-            android:id="@+id/title_from_to_dots_divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/event_detail_short"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_toEndOf="@+id/title_from_to_dots"
-            android:layout_toRightOf="@+id/title_from_to_dots"
-            android:src="@color/contentDividerLine"
-            android:visibility="gone" />
+            <TextView
+                android:id="@+id/event_detail_short"
+                android:fontFamily="@font/captianamericafont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:lines="2"
+                android:maxLines="2"
+                android:textColor="#F9FAFC"
+                android:textSize="30sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/calendar"/>
 
-        <TextView
-            android:id="@+id/title_to_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title_from_to_dots_divider"
-            android:layout_toEndOf="@id/title_from_to_dots"
-            android:layout_toRightOf="@id/title_from_to_dots"
-            android:ellipsize="marquee"
-            android:fadingEdge="horizontal"
-            android:singleLine="true"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:visibility="gone" />
+                    <ImageView
+                        android:id="@+id/title_from_to_dots_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/event_detail_short"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toEndOf="@+id/title_from_to_dots"
+                        android:layout_toRightOf="@+id/title_from_to_dots"
+                        android:src="@color/contentDividerLine"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/title_to_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/title_from_to_dots_divider"
+                        android:layout_toEndOf="@id/title_from_to_dots"
+                        android:layout_toRightOf="@id/title_from_to_dots"
+                        android:ellipsize="marquee"
+                        android:fadingEdge="horizontal"
+                        android:singleLine="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#F9FAFC"
-            android:textSize="20dp"
-            android:fontFamily="@font/captianamericafont"
-            android:text="TIME" />
-        <TextView
-            android:id="@+id/time_event"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#F9FAFC"
-            android:textSize="15dp"
-            android:fontFamily="@font/captianamericafont"
-            android:text="3:00pm"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#F9FAFC"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/captianamericafont"
+                        android:text="TIME" />
+                    <TextView
+                        android:id="@+id/time_event"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#F9FAFC"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/captianamericafont"
+                        android:text="3:00pm"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/location"/>
+                    <TextView
+                        android:id="@+id/venue_event_badage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#F9FAFC"
+                        android:fontFamily="@font/captianamericafont"
+                        android:text="VENUE"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/venue_event"
+                        android:textSize="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#F9FAFC"
+                        android:fontFamily="@font/captianamericafont"
+                        android:text="@string/venue_mock"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_weight="1">
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/location"/>
-        <TextView
-            android:id="@+id/venue_event_badage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#F9FAFC"
-            android:fontFamily="@font/captianamericafont"
-            android:text="VENUE"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/venue_event"
-            android:textSize="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#F9FAFC"
-            android:fontFamily="@font/captianamericafont"
-            android:text="@string/venue_mock"
-            />
-        </LinearLayout>
-        </LinearLayout>
-
     </LinearLayout>
-</LinearLayout>
 </android.support.v7.widget.CardView>

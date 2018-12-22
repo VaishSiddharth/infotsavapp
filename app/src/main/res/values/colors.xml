@@ -33,12 +33,13 @@
     <color name="btnRequest">#ffbf12</color>
 
     <color name="black_overlay">#66000000</color>
-    <color name="colorPrimaryWelcome">#3F51B5</color>
-    <color name="colorPrimaryDarkWelcome">#273833</color>
-    <color name="black">#000</color>
-    <color name="lightorange">#fdf2df</color>
-    <color name="lightorangedark">#ebd6ab</color>
-    <color name="pinkaccent">#FF4081</color>
+    <color name="seafoam">#ffc6f9e5</color>
+    <color name="chartreuse">#ffb6e9b5</color>
+    <color name="emerald">#ffa6d9b5</color>
+    <color name="bluegrass">#ff96c9b5</color>
+    <color name="turquoise">#ff86b9b5</color>
+    <color name="slate">#ff76a9b5</color>
+
+
+
 </resources>
-
-

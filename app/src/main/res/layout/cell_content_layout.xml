@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="Trove Trace"
+            android:fontFamily="@font/deadpoolfont"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
@@ -52,6 +53,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/loadingtext"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:fontFamily="@font/deadpoolfont"
+            android:text="This is gonna Work\n CUZ I DON'T KNOW WHAT I'M GONNA DO IF IT DOESN'T"
+            android:gravity="center" />
 
         <ImageView
             android:id="@+id/head_event_image"
@@ -158,6 +167,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginBottom="5dp"
+                android:fontFamily="@font/deadpoolfont"
                 android:text="DESCRIPTION" />
 
             <ImageView
@@ -179,8 +189,9 @@
                 android:layout_toRightOf="@id/content_avatar"
                 android:text="@string/client_name_mock"
                 android:textColor="@color/mainTextColor"
+                android:fontFamily="@font/captianamericafont"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                />
 
             <ImageView
                 android:id="@+id/content_rating_stars"
@@ -244,6 +255,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
+                    android:fontFamily="@font/deadpoolfont"
                     android:text="Event Heads" />
 
                 <TextView
@@ -256,7 +268,8 @@
                     android:text="Siddharth Vaish\nParth Vaish"
                     android:textColor="@color/mainTextColor"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/captianamericafont"
+                    />
 
                 <TextView
                     android:id="@+id/content_from_address_2"
@@ -285,7 +298,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:text="Event Organizers " />
+                    android:text="Event Organizers "
+                    android:visibility="invisible"/>
 
                 <TextView
                     android:id="@+id/event_organizers_name"
@@ -297,7 +311,7 @@
                     android:text="Siddharth Vaish"
                     android:textColor="@color/mainTextColor"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/captianamericafont"/>
 
                 <TextView
                     android:id="@+id/content_to_address_2"
@@ -352,6 +366,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
+                    android:fontFamily="@font/deadpoolfont"
                     android:text="PRIZE" />
 
                 <TextView
@@ -363,8 +378,8 @@
                     android:layout_below="@id/content_delivery_date_badge"
                     android:text="To be announced"
                     android:textColor="@color/mainTextColor"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/captianamericafont"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/content_delivery_date"
@@ -430,6 +445,7 @@
             android:background="@drawable/layout_bg_button"
             android:padding="10dp"
             android:text="REGISTER"
+            android:fontFamily="@font/captianamericafont"
             android:textAlignment="center"
             android:textColor="@color/mainTextColor"
             android:textSize="20sp" />

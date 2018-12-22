@@ -8,29 +8,52 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import static com.infotsav.test.Util.Constants.fact1;
+import static com.infotsav.test.Util.Constants.fact10;
+import static com.infotsav.test.Util.Constants.fact11;
+import static com.infotsav.test.Util.Constants.fact12;
+import static com.infotsav.test.Util.Constants.fact13;
+import static com.infotsav.test.Util.Constants.fact14;
+import static com.infotsav.test.Util.Constants.fact15;
+import static com.infotsav.test.Util.Constants.fact16;
+import static com.infotsav.test.Util.Constants.fact17;
+import static com.infotsav.test.Util.Constants.fact18;
+import static com.infotsav.test.Util.Constants.fact19;
+import static com.infotsav.test.Util.Constants.fact2;
+import static com.infotsav.test.Util.Constants.fact20;
+import static com.infotsav.test.Util.Constants.fact21;
+import static com.infotsav.test.Util.Constants.fact22;
+import static com.infotsav.test.Util.Constants.fact3;
+import static com.infotsav.test.Util.Constants.fact4;
+import static com.infotsav.test.Util.Constants.fact5;
+import static com.infotsav.test.Util.Constants.fact6;
+import static com.infotsav.test.Util.Constants.fact7;
+import static com.infotsav.test.Util.Constants.fact8;
+import static com.infotsav.test.Util.Constants.fact9;
+
 public class ExampleDataset {
 
     private ArrayList<ECCardData> dataset;
+    private String facts[]={fact1,fact2,fact3,fact4,fact5,fact6,fact7,fact8,fact9,fact10,fact11,fact12,
+            fact13,fact14,fact15,fact16,fact17,fact18,fact19,fact20,fact21,fact22};
 
     public ExampleDataset() {
         dataset = new ArrayList<>();
 
-        CardData item7 = new CardData();
-        item7.setMainBackgroundResource(R.drawable.blackwidow60port);
-        item7.setHeadBackgroundResource(R.drawable.blackwidow60land);
-        item7.setHeadTitle("Home");
-        item7.setPersonMessage("This is the home card");
-        item7.setPersonName("The Venom Trailer used music from the Infinity War Trailer");
-        item7.setPersonPictureResource(R.drawable.marjorie_ellis);
-        item7.setListItems(prepareCommentsArray());
-        dataset.add(item7);
+        int index1 = getRandomNumber();
+        int index2 = getRandomNumber();
+        int index3 = getRandomNumber();
+        int index4 = getRandomNumber();
+        int index5 = getRandomNumber();
+        int index6 = getRandomNumber();
+        int index7 = getRandomNumber();
 
         CardData item6 = new CardData();
-        item6.setMainBackgroundResource(R.drawable.ironman60);
-        item6.setHeadBackgroundResource(R.drawable.ironman60land);
+        item6.setMainBackgroundResource(R.drawable.blackwidow60port);
+        item6.setHeadBackgroundResource(R.drawable.blackwidow60land);
         item6.setHeadTitle("Events");
         item6.setPersonMessage("Captain America’s costume in Infinity War is based on two separate looks from the comics");
-        item6.setPersonName("Captain America’s costume in Infinity War is based on two separate looks from the comics");
+        item6.setPersonName(facts[index7]);
         item6.setPersonPictureResource(R.drawable.marjorie_ellis);
         item6.setListItems(prepareCommentsArray());
         dataset.add(item6);
@@ -40,7 +63,7 @@ public class ExampleDataset {
         item5.setHeadBackgroundResource(R.drawable.spidey60land);
         item5.setHeadTitle("Register");
         item5.setPersonMessage("Marvel may be developing that Black Widow movie after all");
-        item5.setPersonName("Marvel may be developing that Black Widow movie after all");
+        item5.setPersonName(facts[index6]);
         item5.setPersonPictureResource(R.drawable.marjorie_ellis);
         item5.setListItems(prepareCommentsArray());
         dataset.add(item5);
@@ -50,7 +73,7 @@ public class ExampleDataset {
         item4.setHeadBackgroundResource(R.drawable.nickfurry60land);
         item4.setHeadTitle("Updates");
         item4.setPersonMessage("Tony Stark is still nursing an injured left arm");
-        item4.setPersonName("Tony Stark is still nursing an injured left arm");
+        item4.setPersonName(facts[index5]);
         item4.setPersonPictureResource(R.drawable.mattew_jordan);
         item4.setListItems(prepareCommentsArray());
         dataset.add(item4);
@@ -60,7 +83,7 @@ public class ExampleDataset {
         item3.setHeadBackgroundResource(R.drawable.thor60land);
         item3.setHeadTitle("Treasure Hunt");
         item3.setPersonMessage("In the comic books, Thanos erases half of the life in the universe");
-        item3.setPersonName("In the comic books, Thanos erases half of the life in the universe");
+        item3.setPersonName(facts[index4]);
         item3.setPersonPictureResource(R.drawable.ross_rodriguez);
         item3.setListItems(prepareCommentsArray());
         dataset.add(item3);
@@ -69,7 +92,7 @@ public class ExampleDataset {
         item2.setMainBackgroundResource(R.drawable.captainamerica60port);
         item2.setHeadBackgroundResource(R.drawable.captainamerica60);
         item2.setHeadTitle("Sponsors");
-        item2.setPersonName("The final battle in Black Panther is more symbolic than you think");
+        item2.setPersonName(facts[index3]);
         item2.setPersonMessage("The final battle in Black Panther is more symbolic than you think");
         item2.setListItems(prepareCommentsArray());
         item2.setPersonPictureResource(R.drawable.tina_caldwell);
@@ -80,25 +103,29 @@ public class ExampleDataset {
         item1a.setHeadBackgroundResource(R.drawable.ultron60land);
         item1a.setHeadTitle("About Us");
         item1a.setPersonMessage("Cur adelphis studere?");
-        item1a.setPersonName("The characters in Black Panther are speaking a real African language");
+        item1a.setPersonName(facts[index2]);
         item1a.setPersonPictureResource(R.drawable.wallace_sutton);
         item1a.setListItems(prepareCommentsArray());
         dataset.add(item1a);
 
         CardData item1 = new CardData();
-        item1.setMainBackgroundResource(R.drawable.ultron60port);
-        item1.setHeadBackgroundResource(R.drawable.ultron60land);
+        item1.setMainBackgroundResource(R.drawable.ironman60);
+        item1.setHeadBackgroundResource(R.drawable.ironman60land);
         item1.setHeadTitle("Contact Us");
         item1.setPersonMessage("Cur adelphis studere?");
-        item1.setPersonName("There is a copy of the Guardians of the Galaxy Vol. 2 Script written specifically for Vin Diesel");
+        item1.setPersonName(facts[index1]);
         item1.setPersonPictureResource(R.drawable.wallace_sutton);
         item1.setListItems(prepareCommentsArray());
         dataset.add(item1);
 
     }
+    private int getRandomNumber() {
+
+        return new Random().nextInt((21 - 0) + 1);
+    }
 
     public List<ECCardData> getDataset() {
-       // Collections.shuffle(dataset);
+        //Collections.shuffle(dataset);
         return dataset;
     }
 

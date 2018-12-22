@@ -1,15 +1,14 @@
 package com.infotsav.test.foldingView;
 
-import android.graphics.Typeface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
@@ -18,20 +17,22 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.infotsav.test.Main_Activities.RegisterActivity;
+import com.infotsav.test.Main_Activities.Register_Activity;
 import com.infotsav.test.R;
 import com.ramotion.foldingcell.FoldingCell;
 
 
 import java.util.ArrayList;
 
-import static com.infotsav.test.Utils.Constants.all;
-import static com.infotsav.test.Utils.Constants.gamiacs;
-import static com.infotsav.test.Utils.Constants.managerial;
-import static com.infotsav.test.Utils.Constants.online;
-import static com.infotsav.test.Utils.Constants.onsite;
-import static com.infotsav.test.Utils.Constants.robotics;
-import static com.infotsav.test.Utils.Constants.school;
-import static com.infotsav.test.Utils.Constants.technical;
+import static com.infotsav.test.Util.Constants.all;
+import static com.infotsav.test.Util.Constants.gamiacs;
+import static com.infotsav.test.Util.Constants.managerial;
+import static com.infotsav.test.Util.Constants.online;
+import static com.infotsav.test.Util.Constants.onsite;
+import static com.infotsav.test.Util.Constants.robotics;
+import static com.infotsav.test.Util.Constants.school;
+import static com.infotsav.test.Util.Constants.technical;
 
 /**
  * Example of using Folding Cell with ListView and ListAdapter
@@ -61,7 +62,9 @@ public class FoldingActivity extends AppCompatActivity {
         items.get(0).setRequestBtnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "CUSTOM HANDLER FOR FIRST BUTTON", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(getApplicationContext(),RegisterActivity.class);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Please enter your details", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -130,7 +133,9 @@ public class FoldingActivity extends AppCompatActivity {
                 adapter.setDefaultRequestBtnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(getApplicationContext(), "DEFAULT HANDLER FOR ALL BUTTONS", Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(getApplicationContext(),RegisterActivity.class);
+                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(), "Please enter your details", Toast.LENGTH_LONG).show();
                     }
                 });
                 theListView.setAdapter(adapter);
@@ -153,5 +158,17 @@ public class FoldingActivity extends AppCompatActivity {
             }
         });
 
+        theListView.postDelayed(new Runnable() {
+            public void run() {
+                AlphaAnimation anim1 = new AlphaAnimation(0.0f, 1.0f);
+                //anim1.setStartOffset(500);
+                anim1.setDuration(2000);
+                //anim1.setRepeatCount(10);
+                //anim1.setRepeatMode(Animation.ZORDER_BOTTOM);
+                theListView.startAnimation(anim1);
+                theListView.setVisibility(View.VISIBLE);
+
+            }
+        }, 2000);
     }
 }

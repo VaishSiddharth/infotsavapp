@@ -1,20 +1,41 @@
 package com.infotsav.test.foldingView;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.infotsav.test.R;
 import com.ramotion.foldingcell.FoldingCell;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
+import static com.infotsav.test.Util.Constants.back1;
+import static com.infotsav.test.Util.Constants.back10;
+import static com.infotsav.test.Util.Constants.back11;
+import static com.infotsav.test.Util.Constants.back12;
+import static com.infotsav.test.Util.Constants.back2;
+import static com.infotsav.test.Util.Constants.back3;
+import static com.infotsav.test.Util.Constants.back4;
+import static com.infotsav.test.Util.Constants.back5;
+import static com.infotsav.test.Util.Constants.back6;
+import static com.infotsav.test.Util.Constants.back7;
+import static com.infotsav.test.Util.Constants.back8;
+import static com.infotsav.test.Util.Constants.back9;
 
 /**
  * Simple example of ListAdapter for using with Folding Cell
@@ -22,15 +43,38 @@ import java.util.List;
  */
 @SuppressWarnings({"WeakerAccess", "unused"})
 public class FoldingCellListAdapter extends ArrayAdapter<Item> {
-
+    
+    private static final String TAG = FoldingCellListAdapter.class.getSimpleName();
     private HashSet<Integer> unfoldedIndexes = new HashSet<>();
     private View.OnClickListener defaultRequestBtnClickListener;
     private List<Item> mitem;
+    private int backgrounduri[]={back1,back2,back3,back4,back5,back6,back7,back8,back9,back10,back11,back12};
+
 
     public FoldingCellListAdapter(Context context, List<Item> objects) {
         super(context, 0, objects);
     }
-
+    // Implementing Fisher–Yates shuffle
+    static int[] shuffleArray(int[] ar)
+    {
+        // If running on Java 6 or older, use `new Random()` on RHS here
+        Random rnd = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            rnd = ThreadLocalRandom.current();
+        }
+        for (int i = ar.length - 1; i > 0; i--)
+        {
+            int index = 0;
+            if (rnd != null) {
+                index = rnd.nextInt(i + 1);
+            }
+            // Simple swap
+            int a = ar[index];
+            ar[index] = ar[i];
+            ar[i] = a;
+        }
+        return ar;
+    }
     @NonNull
     @Override
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
@@ -38,11 +82,17 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         Item item = getItem(position);
         // if cell is exists - reuse it, if not - create the new one from resource
         FoldingCell cell = (FoldingCell) convertView;
-        ViewHolder viewHolder;
+        final ViewHolder viewHolder;
         if (cell == null) {
             viewHolder = new ViewHolder();
             LayoutInflater vi = LayoutInflater.from(getContext());
             cell = (FoldingCell) vi.inflate(R.layout.cell, parent, false);
+            AlphaAnimation anim1 = new AlphaAnimation(0.0f, 1.0f);
+            anim1.setStartOffset(500);
+            anim1.setDuration(1000);
+            //anim1.setRepeatCount(10);
+            //anim1.setRepeatMode(Animation.ZORDER_BOTTOM);
+            cell.startAnimation(anim1);
             // binding view parts to view holder
             viewHolder.price = cell.findViewById(R.id.title_price);
             viewHolder.time = cell.findViewById(R.id.title_time_label);
@@ -58,6 +108,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             viewHolder.event_rules=cell.findViewById(R.id.event_rules);
             viewHolder.event_name=cell.findViewById(R.id.event_name);
             viewHolder.head_event_image=cell.findViewById(R.id.head_event_image);
+            viewHolder.cardBackground = cell.findViewById(R.id.cardbackground);
             cell.setTag(viewHolder);
         } else {
             // for existing cell set valid valid state(without animation)
@@ -80,6 +131,28 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         viewHolder.venue_event.setText(item.getVenue_event());
         viewHolder.time_event.setText(item.getTime_event());
         //viewHolder.event_image.setImageResource(item.getEvent_image());
+
+
+        //setting background
+
+        int index = (position % backgrounduri.length)  ;
+        if(index>11)
+            index--;
+       /* if(index%11==0)
+            shuffleArray(backgrounduri);*/
+        
+      //  Log.e(TAG, "value of index is "+index);
+        {
+            Glide.with(getContext()).load(backgrounduri[index]).into(new SimpleTarget<Drawable>() {
+                @Override
+                public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        viewHolder.cardBackground.setBackground(resource);
+                    }
+                }
+            });
+        }
+
         String url = item.getEvent_image();
         if(url!=null) {
             Glide.with(getContext()).load(url).into(viewHolder.event_image);
@@ -92,8 +165,13 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         viewHolder.event_name.setText(item.getEvent_name());
         //viewHolder.head_event_image.setImageResource(item.getHead_event_image());
         String url1 =item.getHead_event_image();
-        if(url1!=null) {
-            Glide.with(getContext()).load(url1).into(viewHolder.head_event_image);
+        if(url1!=null) {            Glide.with(getContext()).load(url1).into(viewHolder.head_event_image);
+            AlphaAnimation anim = new AlphaAnimation(0.0f, 1.0f);
+            anim.setStartOffset(3000);
+            anim.setDuration(1000);
+            //anim.setRepeatCount(0);
+            //anim.setRepeatMode(Animation.REVERSE);
+            viewHolder.head_event_image.startAnimation(anim);
 
         }
 
@@ -106,6 +184,11 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         }
 
         return cell;
+    }
+
+    private int getRandomNumber() {
+
+        return new Random().nextInt((11 - 0) + 1);
     }
 
     // simple methods for register cell state changes
@@ -148,6 +231,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         TextView event_rules;
         TextView event_name;
         ImageView head_event_image;
+        LinearLayout cardBackground;
 
     }
 }

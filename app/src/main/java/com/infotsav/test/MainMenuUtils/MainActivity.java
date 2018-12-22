@@ -15,19 +15,16 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.google.firebase.database.FirebaseDatabase;
 import com.infotsav.test.Main_Activities.AboutusActivity;
-import com.infotsav.test.Main_Activities.LoginActivity;
-import com.infotsav.test.Main_Activities.ContactusActivity;
-import com.infotsav.test.Main_Activities.EventsActivity;
-import com.infotsav.test.Main_Activities.HomeActivity;
-import com.infotsav.test.Main_Activities.Register_Activity;
-import com.infotsav.test.Main_Activities.TreasurehuntActivity;
-import com.infotsav.test.R;
 import com.infotsav.test.Main_Activities.RegisterActivity;
+import com.infotsav.test.Main_Activities.Register_Activity;
+import com.infotsav.test.Main_Activities.TabContactUs;
+import com.infotsav.test.Main_Activities.TreasurehuntActivity;
+import com.infotsav.test.PagerActivity;
+import com.infotsav.test.R;
 import com.infotsav.test.Main_Activities.SponsorsActivity;
 import com.infotsav.test.Main_Activities.UpdatesActivity;
-import com.infotsav.test.Utils.Constants;
+import com.infotsav.test.Util.Constants;
 import com.ramotion.expandingcollection.ECBackgroundSwitcherView;
 import com.ramotion.expandingcollection.ECCardData;
 import com.ramotion.expandingcollection.ECPagerView;
@@ -41,7 +38,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+//        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         setContentView(R.layout.activity_main);
 
         // Create adapter for pager
@@ -92,17 +89,13 @@ public class MainActivity extends Activity {
                         //TODO: Get the name of the title (from cardData.get..()), then match them with enums, for example if head's title is home then go to home activity,
                         //TODO: and if its an event go to event library, transitions to activity can be added later that will make it look smoother.
                         
-                        if(cardData.getHeadTitle().equals(Constants.Home))
+                        if(cardData.getHeadTitle().equals(Constants.Events))
                         {
-                            startActivity(new Intent(MainActivity.this, HomeActivity.class));
-                        }
-                        else if(cardData.getHeadTitle().equals(Constants.Events))
-                        {
-                            startActivity(new Intent(MainActivity.this, EventsActivity.class));
+                            startActivity(new Intent(MainActivity.this, PagerActivity.class));
                         }
                         else if(cardData.getHeadTitle().equals(Constants.Register))
                         {
-                            startActivity(new Intent(MainActivity.this, Register_Activity.class));
+                            startActivity(new Intent(MainActivity.this, RegisterActivity.class));
                         }
                         else if(cardData.getHeadTitle().equals(Constants.Updates))
                         {
@@ -118,7 +111,7 @@ public class MainActivity extends Activity {
                         }
                         else if(cardData.getHeadTitle().equals(Constants.Contactus))
                         {
-                            startActivity(new Intent(MainActivity.this, ContactusActivity.class));
+                            startActivity(new Intent(MainActivity.this, TabContactUs.class));
                         }
                         else if(cardData.getHeadTitle().equals(Constants.Aboutus))
                         {
