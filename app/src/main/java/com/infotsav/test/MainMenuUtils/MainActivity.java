@@ -16,8 +16,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.infotsav.test.Main_Activities.AboutusActivity;
-import com.infotsav.test.Main_Activities.ContactusActivity;
 import com.infotsav.test.Main_Activities.Register_Activity;
+import com.infotsav.test.Main_Activities.TabContactUs;
 import com.infotsav.test.Main_Activities.TreasurehuntActivity;
 import com.infotsav.test.PagerActivity;
 import com.infotsav.test.R;
@@ -110,7 +110,7 @@ public class MainActivity extends Activity {
                         }
                         else if(cardData.getHeadTitle().equals(Constants.Contactus))
                         {
-                            startActivity(new Intent(MainActivity.this, ContactusActivity.class));
+                            startActivity(new Intent(MainActivity.this, TabContactUs.class));
                         }
                         else if(cardData.getHeadTitle().equals(Constants.Aboutus))
                         {
