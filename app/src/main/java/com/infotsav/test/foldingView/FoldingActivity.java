@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.infotsav.test.Main_Activities.RegisterActivity;
 import com.infotsav.test.Main_Activities.Register_Activity;
 import com.infotsav.test.R;
 import com.ramotion.foldingcell.FoldingCell;
@@ -60,7 +62,9 @@ public class FoldingActivity extends AppCompatActivity {
         items.get(0).setRequestBtnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "CUSTOM HANDLER FOR FIRST BUTTON", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(getApplicationContext(),RegisterActivity.class);
+                startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Please enter your details", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -129,7 +133,7 @@ public class FoldingActivity extends AppCompatActivity {
                 adapter.setDefaultRequestBtnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent=new Intent(getApplicationContext(),Register_Activity.class);
+                        Intent intent=new Intent(getApplicationContext(),RegisterActivity.class);
                         startActivity(intent);
                         Toast.makeText(getApplicationContext(), "Please enter your details", Toast.LENGTH_LONG).show();
                     }
@@ -154,5 +158,17 @@ public class FoldingActivity extends AppCompatActivity {
             }
         });
 
+        theListView.postDelayed(new Runnable() {
+            public void run() {
+                AlphaAnimation anim1 = new AlphaAnimation(0.0f, 1.0f);
+                //anim1.setStartOffset(500);
+                anim1.setDuration(2000);
+                //anim1.setRepeatCount(10);
+                //anim1.setRepeatMode(Animation.ZORDER_BOTTOM);
+                theListView.startAnimation(anim1);
+                theListView.setVisibility(View.VISIBLE);
+
+            }
+        }, 2000);
     }
 }
