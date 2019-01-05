@@ -1,7 +1,9 @@
 package com.infotsav.test.foldingView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
@@ -47,12 +49,15 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
     private static final String TAG = FoldingCellListAdapter.class.getSimpleName();
     private HashSet<Integer> unfoldedIndexes = new HashSet<>();
     private View.OnClickListener defaultRequestBtnClickListener;
+    private View.OnClickListener contactEventHead;
     private List<Item> mitem;
     private int backgrounduri[]={back1,back2,back3,back4,back5,back6,back7,back8,back9,back10,back11,back12};
+    private Context mContext;
 
 
     public FoldingCellListAdapter(Context context, List<Item> objects) {
         super(context, 0, objects);
+        this.mContext=context;
     }
     // Implementing Fisher–Yates shuffle
     static int[] shuffleArray(int[] ar)
@@ -102,6 +107,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             viewHolder.time_event = cell.findViewById(R.id.time_event);
             viewHolder.event_image = cell.findViewById(R.id.event_image);
             viewHolder.contentRequestBtn = cell.findViewById(R.id.content_request_btn);
+            viewHolder.contact_button=cell.findViewById(R.id.contact_button);
             viewHolder.event_description_long=cell.findViewById(R.id.event_description_long);
             viewHolder.event_head_names=cell.findViewById(R.id.event_head_names);
             viewHolder.event_organizers_name=cell.findViewById(R.id.event_organizers_name);
@@ -175,6 +181,18 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
 
         }
 
+
+        final String number = item.getPrice();
+
+        viewHolder.contact_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + number));
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                mContext.startActivity(intent);
+            }
+        });
+
         // set custom btn handler for list item from that item
         if (item.getRequestBtnClickListener() != null) {
             viewHolder.contentRequestBtn.setOnClickListener(item.getRequestBtnClickListener());
@@ -232,6 +250,8 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         TextView event_name;
         ImageView head_event_image;
         LinearLayout cardBackground;
+        TextView contact_button;
+
 
     }
 }
