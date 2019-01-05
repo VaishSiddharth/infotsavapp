@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import com.infotsav.test.MainMenuUtils.MainActivity;
 
 public class WelcomeActivity extends AppCompatActivity {
-    private final int SPLASH_DISPLAY_LENGTH = 10000;
+    private final int SPLASH_DISPLAY_LENGTH = 2000;
     LinearLayout line3;
     ImageView line1;
     Animation uptodown,downtoup;
