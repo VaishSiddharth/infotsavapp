@@ -158,18 +158,5 @@ public class FoldingActivity extends AppCompatActivity {
 
             }
         });
-
-        theListView.postDelayed(new Runnable() {
-            public void run() {
-                AlphaAnimation anim1 = new AlphaAnimation(0.0f, 1.0f);
-                //anim1.setStartOffset(500);
-                anim1.setDuration(2000);
-                //anim1.setRepeatCount(10);
-                //anim1.setRepeatMode(Animation.ZORDER_BOTTOM);
-                theListView.startAnimation(anim1);
-                theListView.setVisibility(View.VISIBLE);
-
-            }
-        }, 2000);
     }
 }

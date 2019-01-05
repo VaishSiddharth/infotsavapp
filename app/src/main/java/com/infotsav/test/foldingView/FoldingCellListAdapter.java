@@ -92,12 +92,12 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             viewHolder = new ViewHolder();
             LayoutInflater vi = LayoutInflater.from(getContext());
             cell = (FoldingCell) vi.inflate(R.layout.cell, parent, false);
-            AlphaAnimation anim1 = new AlphaAnimation(0.0f, 1.0f);
-            anim1.setStartOffset(500);
+            /*AlphaAnimation anim1 = new AlphaAnimation(0.0f, 1.0f);
+            anim1.setStartOffset(100);
             anim1.setDuration(1000);
             //anim1.setRepeatCount(10);
             //anim1.setRepeatMode(Animation.ZORDER_BOTTOM);
-            cell.startAnimation(anim1);
+            cell.startAnimation(anim1);*/
             // binding view parts to view holder
             viewHolder.price = cell.findViewById(R.id.title_price);
             viewHolder.time = cell.findViewById(R.id.title_time_label);
@@ -140,6 +140,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
 
 
         //setting background
+        //LinearLayout cardBackground=convertView.findViewById(R.id.cardbackground);
 
         int index = (position % backgrounduri.length)  ;
         if(index>11)
@@ -159,11 +160,11 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             });
         }
 
-        String url = item.getEvent_image();
+        /*String url = item.getEvent_image();
         if(url!=null) {
             Glide.with(getContext()).load(url).into(viewHolder.event_image);
 
-        }
+        }*/
         viewHolder.event_description_long.setText(item.getEvent_description_long());
         viewHolder.event_head_names.setText(item.getEvent_head_names());
         viewHolder.event_organizers_name.setText(item.getEvent_organizers_name());
@@ -171,15 +172,8 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         viewHolder.event_name.setText(item.getEvent_name());
         //viewHolder.head_event_image.setImageResource(item.getHead_event_image());
         String url1 =item.getHead_event_image();
-        if(url1!=null) {            Glide.with(getContext()).load(url1).into(viewHolder.head_event_image);
-            AlphaAnimation anim = new AlphaAnimation(0.0f, 1.0f);
-            anim.setStartOffset(3000);
-            anim.setDuration(1000);
-            //anim.setRepeatCount(0);
-            //anim.setRepeatMode(Animation.REVERSE);
-            viewHolder.head_event_image.startAnimation(anim);
-
-        }
+        int resID = mContext.getResources().getIdentifier(url1 , "drawable", mContext.getPackageName());
+        viewHolder.head_event_image.setImageResource(resID);
 
 
         final String number = item.getPrice();
