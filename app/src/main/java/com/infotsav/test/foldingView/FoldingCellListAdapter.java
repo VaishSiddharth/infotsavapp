@@ -1,7 +1,9 @@
 package com.infotsav.test.foldingView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
@@ -47,12 +49,15 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
     private static final String TAG = FoldingCellListAdapter.class.getSimpleName();
     private HashSet<Integer> unfoldedIndexes = new HashSet<>();
     private View.OnClickListener defaultRequestBtnClickListener;
+    private View.OnClickListener contactEventHead;
     private List<Item> mitem;
     private int backgrounduri[]={back1,back2,back3,back4,back5,back6,back7,back8,back9,back10,back11,back12};
+    private Context mContext;
 
 
     public FoldingCellListAdapter(Context context, List<Item> objects) {
         super(context, 0, objects);
+        this.mContext=context;
     }
     // Implementing Fisher–Yates shuffle
     static int[] shuffleArray(int[] ar)
@@ -87,12 +92,12 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             viewHolder = new ViewHolder();
             LayoutInflater vi = LayoutInflater.from(getContext());
             cell = (FoldingCell) vi.inflate(R.layout.cell, parent, false);
-            AlphaAnimation anim1 = new AlphaAnimation(0.0f, 1.0f);
-            anim1.setStartOffset(500);
+            /*AlphaAnimation anim1 = new AlphaAnimation(0.0f, 1.0f);
+            anim1.setStartOffset(100);
             anim1.setDuration(1000);
             //anim1.setRepeatCount(10);
             //anim1.setRepeatMode(Animation.ZORDER_BOTTOM);
-            cell.startAnimation(anim1);
+            cell.startAnimation(anim1);*/
             // binding view parts to view holder
             viewHolder.price = cell.findViewById(R.id.title_price);
             viewHolder.time = cell.findViewById(R.id.title_time_label);
@@ -102,6 +107,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             viewHolder.time_event = cell.findViewById(R.id.time_event);
             viewHolder.event_image = cell.findViewById(R.id.event_image);
             viewHolder.contentRequestBtn = cell.findViewById(R.id.content_request_btn);
+            viewHolder.contact_button=cell.findViewById(R.id.contact_button);
             viewHolder.event_description_long=cell.findViewById(R.id.event_description_long);
             viewHolder.event_head_names=cell.findViewById(R.id.event_head_names);
             viewHolder.event_organizers_name=cell.findViewById(R.id.event_organizers_name);
@@ -134,6 +140,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
 
 
         //setting background
+        //LinearLayout cardBackground=convertView.findViewById(R.id.cardbackground);
 
         int index = (position % backgrounduri.length)  ;
         if(index>11)
@@ -153,11 +160,11 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             });
         }
 
-        String url = item.getEvent_image();
+        /*String url = item.getEvent_image();
         if(url!=null) {
             Glide.with(getContext()).load(url).into(viewHolder.event_image);
 
-        }
+        }*/
         viewHolder.event_description_long.setText(item.getEvent_description_long());
         viewHolder.event_head_names.setText(item.getEvent_head_names());
         viewHolder.event_organizers_name.setText(item.getEvent_organizers_name());
@@ -165,15 +172,20 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         viewHolder.event_name.setText(item.getEvent_name());
         //viewHolder.head_event_image.setImageResource(item.getHead_event_image());
         String url1 =item.getHead_event_image();
-        if(url1!=null) {            Glide.with(getContext()).load(url1).into(viewHolder.head_event_image);
-            AlphaAnimation anim = new AlphaAnimation(0.0f, 1.0f);
-            anim.setStartOffset(3000);
-            anim.setDuration(1000);
-            //anim.setRepeatCount(0);
-            //anim.setRepeatMode(Animation.REVERSE);
-            viewHolder.head_event_image.startAnimation(anim);
+        int resID = mContext.getResources().getIdentifier(url1 , "drawable", mContext.getPackageName());
+        viewHolder.head_event_image.setImageResource(resID);
 
-        }
+
+        final String number = item.getPrice();
+
+        viewHolder.contact_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + number));
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                mContext.startActivity(intent);
+            }
+        });
 
         // set custom btn handler for list item from that item
         if (item.getRequestBtnClickListener() != null) {
@@ -232,6 +244,8 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         TextView event_name;
         ImageView head_event_image;
         LinearLayout cardBackground;
+        TextView contact_button;
+
 
     }
 }

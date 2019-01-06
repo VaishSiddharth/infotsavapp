@@ -265,7 +265,7 @@
                     android:layout_alignLeft="@id/content_from_badge"
                     android:layout_alignStart="@id/content_from_badge"
                     android:layout_below="@id/content_from_badge"
-                    android:text="Siddharth Vaish\nParth Vaish"
+                    android:text="Siddharth Vaish"
                     android:textColor="@color/mainTextColor"
                     android:textSize="18sp"
                     android:fontFamily="@font/captianamericafont"
@@ -298,7 +298,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:text="Event Organizers "
+                    android:fontFamily="@font/deadpoolfont"
+                    android:text="Event Heads"
                     android:visibility="invisible"/>
 
                 <TextView
@@ -437,18 +438,37 @@
         </LinearLayout>
 
         <!-- request button android:background="@color/btnRequest"-->
-        <TextView
-            android:id="@+id/content_request_btn"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/layout_bg_button"
-            android:padding="10dp"
-            android:text="REGISTER"
-            android:fontFamily="@font/captianamericafont"
-            android:textAlignment="center"
-            android:textColor="@color/mainTextColor"
-            android:textSize="20sp" />
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/content_request_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/layout_bg_button"
+                android:padding="10dp"
+                android:text="REGISTER"
+                android:fontFamily="@font/captianamericafont"
+                android:textAlignment="center"
+                android:textColor="@color/mainTextColor"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/contact_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/layout_bg_button"
+                android:padding="10dp"
+                android:text="CONTACT"
+                android:fontFamily="@font/captianamericafont"
+                android:textAlignment="center"
+                android:textColor="@color/mainTextColor"
+                android:textSize="20sp" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"

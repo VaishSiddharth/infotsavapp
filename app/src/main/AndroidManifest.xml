@@ -3,6 +3,7 @@
     package="com.infotsav.test">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -11,25 +12,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainMenuUtils.MainActivity">
+        <activity android:name=".WelcomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainMenuUtils.MainActivity" />
         <activity android:name=".Main_Activities.EventsActivity" />
         <activity android:name=".Main_Activities.RegisterActivity" />
         <activity android:name=".Main_Activities.UpdatesActivity" />
-        <activity android:name=".Main_Activities.ContactusActivity" />
         <activity android:name=".Main_Activities.SponsorsActivity" />
         <activity android:name=".foldingView.FoldingActivity" />
         <activity android:name=".Main_Activities.TreasurehuntActivity" />
         <activity android:name=".Main_Activities.AboutusActivity" />
-        <activity android:name=".PagerActivity"/>
+        <activity android:name=".PagerActivity" />
         <activity android:name=".Main_Activities.LoginActivity" />
-        <activity android:name=".Main_Activities.Register_Activity">
-        </activity>
+        <activity android:name=".Main_Activities.Register_Activity" />
+        <activity
+            android:name=".Main_Activities.TabContactUs"
+            android:label="@string/title_activity_tab_contact_us"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
