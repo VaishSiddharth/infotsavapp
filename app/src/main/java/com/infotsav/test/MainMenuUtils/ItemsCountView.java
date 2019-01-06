@@ -62,21 +62,35 @@ public class ItemsCountView extends LinearLayout {
 
     @SuppressLint("SetTextI18n")
     public void update(int newPosition, int oldPosition, int totalElements) {
-        textView.setText(" / " + totalElements);
+        //textView.setText(" / " + totalElements);
         int offset = (int) (textSwitcher.getHeight() * 0.75);
-        int duration = 250;
+        int duration = 300;
         if (newPosition > oldPosition) {
-            textSwitcher.setInAnimation(createPositionAnimation(-offset, 0, 0f, 1f, duration));
-            textSwitcher.setOutAnimation(createPositionAnimation(0, offset, 1f, 0f, duration));
+            textSwitcher.setInAnimation(createPositionAnimation(0, 0, 0f, 1f, duration,-offset, 0));
+            textSwitcher.setOutAnimation(createPositionAnimation(0, 0, 1f, 0f, duration,0, offset));
         } else if (oldPosition > newPosition) {
-            textSwitcher.setInAnimation(createPositionAnimation(offset, 0, 0f, 1f, duration));
-            textSwitcher.setOutAnimation(createPositionAnimation(0, -offset, 1f, 0f, duration));
+            textSwitcher.setInAnimation(createPositionAnimation(0, 0, 0f, 1f, duration,offset, 0));
+            textSwitcher.setOutAnimation(createPositionAnimation(0, 0, 1f, 0f, duration,0, -offset));
         }
-        textSwitcher.setText(String.valueOf(newPosition + 1));
+        //textSwitcher.setText(String.valueOf(newPosition + 1));
+        if(newPosition==0)
+            textSwitcher.setText("⚫⚪⚪⚪⚪⚪⚪");
+        else if(newPosition==1)
+            textSwitcher.setText("⚪⚫⚪⚪⚪⚪⚪");
+        else if(newPosition==2)
+            textSwitcher.setText("⚪⚪⚫⚪⚪⚪⚪");
+        else if(newPosition==3)
+            textSwitcher.setText("⚪⚪⚪⚫⚪⚪⚪");
+        else if(newPosition==4)
+            textSwitcher.setText("⚪⚪⚪⚪⚫⚪⚪");
+        else if(newPosition==5)
+            textSwitcher.setText("⚪⚪⚪⚪⚪⚫⚪");
+        else if(newPosition==6)
+            textSwitcher.setText("⚪⚪⚪⚪⚪⚪⚫");
     }
 
-    private Animation createPositionAnimation(int fromY, int toY, float fromAlpha, float toAlpha, int duration) {
-        TranslateAnimation translate = new TranslateAnimation(0, 0, fromY, toY);
+    private Animation createPositionAnimation(int fromY, int toY, float fromAlpha, float toAlpha, int duration,int fromX, int toX) {
+        TranslateAnimation translate = new TranslateAnimation(fromX, toX, fromY, toY);
         translate.setDuration(duration);
 
         AlphaAnimation alpha = new AlphaAnimation(fromAlpha, toAlpha);
