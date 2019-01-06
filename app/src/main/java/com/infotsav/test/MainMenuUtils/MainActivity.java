@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,10 +68,14 @@ public class MainActivity extends Activity {
 
                 // Set header data from data object
                 TextView title = (TextView) head.findViewById(R.id.title);
+                Typeface font_title=Typeface.createFromAsset(getAssets(),"fonts/deadpoolmovie.otf");
+                title.setTypeface(font_title);
                 title.setText(cardData.getHeadTitle());
                 ImageView avatar = (ImageView) head.findViewById(R.id.avatar);
                 avatar.setImageResource(cardData.getPersonPictureResource());
                 TextView name = (TextView) head.findViewById(R.id.name);
+                Typeface font_name=Typeface.createFromAsset(getAssets(),"fonts/captainmarvel.otf");
+                name.setTypeface(font_name);
                 name.setText(cardData.getPersonName() + ":");
                 TextView message = (TextView) head.findViewById(R.id.message);
                 message.setText(cardData.getPersonMessage());
