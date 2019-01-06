@@ -12,7 +12,8 @@
         android:layout_height="match_parent"
         android:elevation="5dp"
         app:cardCornerRadius="50dp"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@android:color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,7 +44,7 @@
                     android:fontFamily="@font/captianmarvelfont"
                     android:padding="2dp"
                     android:text="THE MAANSINGH"
-                    android:textColor="#212121"
+                    android:textColor="@android:color/black"
                     android:textSize="15sp"/>
 
                 <TextView
@@ -53,6 +54,7 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/captianmarvelfont"
                     android:padding="2dp"
+                    android:textColor="@android:color/black"
                     android:text="Co-Sponsor"
                     android:textSize="10sp" />
 
@@ -64,6 +66,7 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/captianmarvelfont"
                     android:padding="2dp"
+                    android:textColor="@android:color/black"
                     android:text="EDM Night"
                     android:textSize="10sp" />
             </LinearLayout>

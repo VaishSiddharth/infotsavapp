@@ -11,7 +11,8 @@
         android:layout_height="match_parent"
         android:elevation="5dp"
         app:cardCornerRadius="50dp"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@android:color/white">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,6 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
+                android:textColor="@android:color/black"
                 android:gravity="end"
                 android:fontFamily="@font/captianmarvelfont"
                 android:paddingRight="15dp"
@@ -37,7 +39,7 @@
                 android:fontFamily="@font/captianmarvelfont"
                 android:padding="2dp"
                 android:text="ANNOUNCEMENT"
-                android:textColor="#212121"
+                android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
             <TextView
@@ -50,6 +52,7 @@
                 android:maxLines="4"
                 android:fontFamily="@font/captianmarvelfont"
                 android:padding="1dp"
+                android:textColor="@android:color/black"
                 android:text="The opening ceremony has begun.Reach Main Audi asap!"
                 android:textSize="10sp" />
         </LinearLayout>
