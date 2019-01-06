@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="510dp"
         android:clipChildren="false"
         android:orientation="horizontal" />
 
@@ -25,7 +25,7 @@
         android:id="@+id/ec_pager_element"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="220dp"
         ec:cardHeaderHeightExpanded="200dp"
         ec:cardHeight="250dp"
         ec:cardWidth="250dp" />
