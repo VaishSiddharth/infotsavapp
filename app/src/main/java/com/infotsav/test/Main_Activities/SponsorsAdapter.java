@@ -1,6 +1,7 @@
 package com.infotsav.test.Main_Activities;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -42,8 +43,12 @@ public class SponsorsAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = View.inflate(mContext,R.layout.sponsors_list,null);
         TextView sponsor_name=(TextView)view.findViewById(R.id.sponsor_name);
+        Typeface font_sponsor=Typeface.createFromAsset(mContext.getAssets(),"fonts/captainmarvel.otf");
+        sponsor_name.setTypeface(font_sponsor);
         TextView sponsor_level=(TextView)view.findViewById(R.id.sponsor_level);
+        sponsor_level.setTypeface(font_sponsor);
         TextView sponsor_dept=(TextView)view.findViewById(R.id.sponsor_department);
+        sponsor_dept.setTypeface(font_sponsor);
         ImageView sponsor_image=(ImageView)view.findViewById(R.id.sponsor_image);
         String url = mSponsors_detailslist.get(position).getSponsor_image();
         if(url!=null) {

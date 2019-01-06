@@ -18,7 +18,7 @@ public class AboutusActivity extends AppCompatActivity {
         TextView mtitle= (TextView) findViewById(R.id.title_aboutus);
 
         TextView mtext= (TextView) findViewById(R.id.aboutus_description);
-        mtitle.setText("ABOUT US");
+        //mtitle.setText("ABOUT US");
         StringBuilder stringBuilder= new StringBuilder();
         String para="Infotsav is the techno-managerial fest of the institute, " +
                 "aimed at nurturing creativity and innovation among the youth in a " +
