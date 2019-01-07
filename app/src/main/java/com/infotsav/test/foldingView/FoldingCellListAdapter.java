@@ -1,10 +1,12 @@
 package com.infotsav.test.foldingView;
 
+import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
+import android.provider.CalendarContract;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -115,6 +117,8 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             viewHolder.event_name=cell.findViewById(R.id.event_name);
             viewHolder.head_event_image=cell.findViewById(R.id.head_event_image);
             viewHolder.cardBackground = cell.findViewById(R.id.cardbackground);
+            viewHolder.calander=cell.findViewById(R.id.calendarimage);
+            viewHolder.location=cell.findViewById(R.id.locationimage);
             cell.setTag(viewHolder);
         } else {
             // for existing cell set valid valid state(without animation)
@@ -128,6 +132,34 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
 
         if (null == item)
             return cell;
+
+        //calander intent
+            viewHolder.calander.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                long startMillis=10;
+                Uri.Builder builder = CalendarContract.CONTENT_URI.buildUpon();
+                builder.appendPath("time");
+                ContentUris.appendId(builder, startMillis);
+                Intent intent = new Intent(Intent.ACTION_VIEW)
+                        .setData(builder.build());
+                mContext.startActivity(intent);
+
+
+            }
+        });
+        //map intent
+            viewHolder.location.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Uri gmmIntentUri = Uri.parse("geo:26.2495,78.1740");
+                    Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                    mapIntent.setPackage("com.google.android.apps.maps");
+                    if (mapIntent.resolveActivity(mContext.getPackageManager()) != null) {
+                        mContext.startActivity(mapIntent);
+                    }
+                }
+            });
 
         // bind data from selected element to view through view holder
         viewHolder.price.setText(item.getPrice());
@@ -245,6 +277,8 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         ImageView head_event_image;
         LinearLayout cardBackground;
         TextView contact_button;
+        ImageView calander;
+        ImageView location;
 
 
     }
