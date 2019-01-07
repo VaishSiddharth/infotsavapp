@@ -124,7 +124,9 @@
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/calendar"/>
+                        android:src="@drawable/calendar"
+                        android:id="@+id/calendarimage"
+                        android:clickable="true"/>
 
                     <ImageView
                         android:id="@+id/title_from_to_dots_divider"
@@ -179,7 +181,9 @@
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/location"/>
+                        android:src="@drawable/location"
+                        android:id="@+id/locationimage"
+                        android:clickable="true"/>
                     <TextView
                         android:id="@+id/venue_event_badage"
                         android:layout_width="wrap_content"
