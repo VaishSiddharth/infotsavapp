@@ -23,6 +23,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.infotsav.test.Main_Activities.NotificationModActivity;
+import com.infotsav.test.Main_Activities.TreasurehuntActivity;
 import com.infotsav.test.R;
 import com.ramotion.foldingcell.FoldingCell;
 
@@ -134,6 +136,17 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             }
             viewHolder = (ViewHolder) cell.getTag();
         }
+
+        //mod apk for notifications
+        /*viewHolder.event_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, NotificationModActivity.class);
+                intent.putExtra("eventId", item.getEventId());
+                intent.putExtra("eventname", item.getEvent_name());
+                mContext.startActivity(intent);
+            }
+        });*/
         //subscribe button
         viewHolder.subscribe.setOnClickListener(new View.OnClickListener() {
             @Override

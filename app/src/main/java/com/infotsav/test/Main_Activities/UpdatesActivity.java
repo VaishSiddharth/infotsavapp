@@ -36,7 +36,7 @@ public class UpdatesActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Updates_details updates_details=(Updates_details)dataSnapshot.getValue(Updates_details.class);
-                mUpdates_detailslist.add(updates_details);
+                mUpdates_detailslist.add(0,updates_details);
                 if(adapter!=null)
                     adapter.notifyDataSetChanged();
             }
