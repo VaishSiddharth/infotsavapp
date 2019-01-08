@@ -152,7 +152,7 @@ public class PagerActivity extends AppCompatActivity {
                         .withImageCutType(GlazyImageView.ImageCutType.WAVE)
                         .withImageCutHeightDP(40)
         );
-        mPagerAdapter.addCardItem(
+        /*mPagerAdapter.addCardItem(
                 new GlazyCard()
                         .withTitle("ALL")
                         .withSubTitle("EVENTS")
@@ -160,7 +160,7 @@ public class PagerActivity extends AppCompatActivity {
                         .withImageRes(R.drawable.thanosall)
                         .withImageCutType(GlazyImageView.ImageCutType.ARC)
                         .withImageCutHeightDP(40)
-        );
+        );*/
 
 
         mPager.setAdapter(mPagerAdapter);

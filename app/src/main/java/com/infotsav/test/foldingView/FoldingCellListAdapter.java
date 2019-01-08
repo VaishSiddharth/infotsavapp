@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.CalendarContract;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.infotsav.test.R;
 import com.ramotion.foldingcell.FoldingCell;
 
@@ -135,7 +138,15 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         viewHolder.subscribe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String eventId= item.getEventId();
+                //debugging
+                Log.e(TAG, "The id is "+ eventId);
+                if(eventId!=null)
+                {
+                    FirebaseMessaging.getInstance().subscribeToTopic(eventId);
+                    // TODO: Revisit later
+                    Toast.makeText(mContext,"You will be notified about "+item.getEvent_name(),Toast.LENGTH_LONG).show();
+                }
             }
         });
 
