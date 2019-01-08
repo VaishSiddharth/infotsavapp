@@ -18,26 +18,26 @@ import java.util.Map;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class MyFirebaseMessagingService  extends FirebaseMessagingService {
-    @Override
-    public void onMessageReceived(RemoteMessage remoteMessage) {
-        super.onMessageReceived(remoteMessage);
-        Log.e(TAG, "The message received is " + remoteMessage);
-        showNotification(remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody(), remoteMessage.getData());
-    }
+        public class MyFirebaseMessagingService  extends FirebaseMessagingService {
+            @Override
+            public void onMessageReceived(RemoteMessage remoteMessage) {
+                super.onMessageReceived(remoteMessage);
+                Log.e(TAG, "The message received is " + remoteMessage);
+                showNotification(remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody(), remoteMessage.getData());
+            }
 
-    private void showNotification(String title, String body, Map<String, String> data) {
-        Context context = getApplicationContext();
-        NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(context)
-                        .setSmallIcon(R.drawable.callbutton)
-                        //.setLargeIcon(bitmap)
-                        .setContentTitle(title)
-                        .setContentText(body)
-                        .setStyle(new NotificationCompat.BigTextStyle()
-                                .bigText(body));
-        Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        builder.setSound(alarmSound);
-        builder.setAutoCancel(true);
+            private void showNotification(String title, String body, Map<String, String> data) {
+                Context context = getApplicationContext();
+                NotificationCompat.Builder builder =
+                        new NotificationCompat.Builder(context)
+                                .setSmallIcon(R.drawable.callbutton)
+                                //.setLargeIcon(bitmap)
+                                .setContentTitle(title)
+                                .setContentText(body)
+                                .setStyle(new NotificationCompat.BigTextStyle()
+                                        .bigText(body));
+                Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                builder.setSound(alarmSound);
+                builder.setAutoCancel(true);
     }
 }
