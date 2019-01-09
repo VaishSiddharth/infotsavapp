@@ -100,12 +100,12 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             viewHolder = new ViewHolder();
             LayoutInflater vi = LayoutInflater.from(getContext());
             cell = (FoldingCell) vi.inflate(R.layout.cell, parent, false);
-            /*AlphaAnimation anim1 = new AlphaAnimation(0.0f, 1.0f);
+            AlphaAnimation anim1 = new AlphaAnimation(0.0f, 1.0f);
             anim1.setStartOffset(100);
             anim1.setDuration(1000);
             //anim1.setRepeatCount(10);
             //anim1.setRepeatMode(Animation.ZORDER_BOTTOM);
-            cell.startAnimation(anim1);*/
+            cell.startAnimation(anim1);
             // binding view parts to view holder
             viewHolder.price = cell.findViewById(R.id.title_price);
             viewHolder.time = cell.findViewById(R.id.title_time_label);
@@ -138,7 +138,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         }
 
         //mod apk for notifications
-        /*viewHolder.event_name.setOnClickListener(new View.OnClickListener() {
+        viewHolder.event_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, NotificationModActivity.class);
@@ -146,7 +146,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
                 intent.putExtra("eventname", item.getEvent_name());
                 mContext.startActivity(intent);
             }
-        });*/
+        });
         //subscribe button
         viewHolder.subscribe.setOnClickListener(new View.OnClickListener() {
             @Override
