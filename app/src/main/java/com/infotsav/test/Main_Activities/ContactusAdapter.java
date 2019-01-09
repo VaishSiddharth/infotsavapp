@@ -59,11 +59,11 @@ public class ContactusAdapter extends BaseAdapter {
         ImageView person_call=(ImageView) view.findViewById(R.id.call_person_button);
         ImageView person_image=(ImageView)view.findViewById(R.id.person_image);
 
-        String url = mContactus_detailslist.get(position).getImage();
+        /*String url = mContactus_detailslist.get(position).getImage();
         if(url!=null) {
             Glide.with(mContext).load(url).into(person_image);
 
-        }
+        }*/
         person_name.setText(mContactus_detailslist.get(position).getName());
         person_email.setText(mContactus_detailslist.get(position).getEmail());
         person_department.setText(mContactus_detailslist.get(position).getDept());
@@ -79,7 +79,7 @@ public class ContactusAdapter extends BaseAdapter {
         });
 
         person_call.setImageResource(R.drawable.callbutton);
-        //person_image.setImageResource(mContactus_detailslist.get(position).getImage());
+        person_image.setImageResource(mContactus_detailslist.get(position).getImage());
         view.setTag(mContactus_detailslist.get(position).getId());
         return view;
     }
