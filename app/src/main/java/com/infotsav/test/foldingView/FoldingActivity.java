@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
@@ -55,6 +56,13 @@ public class FoldingActivity extends AppCompatActivity {
 
         // get our list view
         theListView = findViewById(R.id.mainListView);
+        final ProgressBar progressBar=findViewById(R.id.progressBar3);
+        theListView.postDelayed(new Runnable() {
+            public void run() {
+                //theListView.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.GONE);
+            }
+        }, 1000);
 
         // prepare elements to display
         final ArrayList<Item> items = Item.getTestingList();

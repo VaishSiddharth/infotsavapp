@@ -74,19 +74,19 @@ public class ItemsCountView extends LinearLayout {
         }
         //textSwitcher.setText(String.valueOf(newPosition + 1));
         if(newPosition==0)
-            textSwitcher.setText("⚫⚪⚪⚪⚪⚪⚪");
+            textSwitcher.setText("• ○ ○ ○ ○ ○ ○");
         else if(newPosition==1)
-            textSwitcher.setText("⚪⚫⚪⚪⚪⚪⚪");
+            textSwitcher.setText("○ • ○ ○ ○ ○ ○");
         else if(newPosition==2)
-            textSwitcher.setText("⚪⚪⚫⚪⚪⚪⚪");
+            textSwitcher.setText("○ ○ • ○ ○ ○ ○");
         else if(newPosition==3)
-            textSwitcher.setText("⚪⚪⚪⚫⚪⚪⚪");
+            textSwitcher.setText("○ ○ ○ • ○ ○ ○");
         else if(newPosition==4)
-            textSwitcher.setText("⚪⚪⚪⚪⚫⚪⚪");
+            textSwitcher.setText("○ ○ ○ ○ • ○ ○");
         else if(newPosition==5)
-            textSwitcher.setText("⚪⚪⚪⚪⚪⚫⚪");
+            textSwitcher.setText("○ ○ ○ ○ ○ • ○");
         else if(newPosition==6)
-            textSwitcher.setText("⚪⚪⚪⚪⚪⚪⚫");
+            textSwitcher.setText("○ ○ ○ ○ ○ ○ •");
     }
 
     private Animation createPositionAnimation(int fromY, int toY, float fromAlpha, float toAlpha, int duration,int fromX, int toX) {

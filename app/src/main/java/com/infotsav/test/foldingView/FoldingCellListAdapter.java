@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.CalendarContract;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,13 +17,18 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.infotsav.test.Main_Activities.NotificationModActivity;
+import com.infotsav.test.Main_Activities.TreasurehuntActivity;
 import com.infotsav.test.R;
 import com.ramotion.foldingcell.FoldingCell;
 
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
@@ -86,7 +92,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
     @Override
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         // get item for selected view
-        Item item = getItem(position);
+        final Item item = getItem(position);
         // if cell is exists - reuse it, if not - create the new one from resource
         FoldingCell cell = (FoldingCell) convertView;
         final ViewHolder viewHolder;
@@ -94,12 +100,12 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             viewHolder = new ViewHolder();
             LayoutInflater vi = LayoutInflater.from(getContext());
             cell = (FoldingCell) vi.inflate(R.layout.cell, parent, false);
-            /*AlphaAnimation anim1 = new AlphaAnimation(0.0f, 1.0f);
+            AlphaAnimation anim1 = new AlphaAnimation(0.0f, 1.0f);
             anim1.setStartOffset(100);
             anim1.setDuration(1000);
             //anim1.setRepeatCount(10);
             //anim1.setRepeatMode(Animation.ZORDER_BOTTOM);
-            cell.startAnimation(anim1);*/
+            cell.startAnimation(anim1);
             // binding view parts to view holder
             viewHolder.price = cell.findViewById(R.id.title_price);
             viewHolder.time = cell.findViewById(R.id.title_time_label);
@@ -119,6 +125,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             viewHolder.cardBackground = cell.findViewById(R.id.cardbackground);
             viewHolder.calander=cell.findViewById(R.id.calendarimage);
             viewHolder.location=cell.findViewById(R.id.locationimage);
+            viewHolder.subscribe=cell.findViewById(R.id.notification);
             cell.setTag(viewHolder);
         } else {
             // for existing cell set valid valid state(without animation)
@@ -130,6 +137,32 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             viewHolder = (ViewHolder) cell.getTag();
         }
 
+        //mod apk for notifications
+        /*viewHolder.event_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, NotificationModActivity.class);
+                intent.putExtra("eventId", item.getEventId());
+                intent.putExtra("eventname", item.getEvent_name());
+                mContext.startActivity(intent);
+            }
+        });*/
+        //subscribe button
+        viewHolder.subscribe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String eventId= item.getEventId();
+                //debugging
+                Log.e(TAG, "The id is "+ eventId);
+                if(eventId!=null)
+                {
+                    FirebaseMessaging.getInstance().subscribeToTopic(eventId);
+                    // TODO: Revisit later
+                    Toast.makeText(mContext,"You will be notified about "+item.getEvent_name(),Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
         if (null == item)
             return cell;
 
@@ -137,15 +170,16 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             viewHolder.calander.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                long startMillis=10;
-                Uri.Builder builder = CalendarContract.CONTENT_URI.buildUpon();
-                builder.appendPath("time");
-                ContentUris.appendId(builder, startMillis);
-                Intent intent = new Intent(Intent.ACTION_VIEW)
-                        .setData(builder.build());
-                mContext.startActivity(intent);
-
-
+                Intent calendarIntent = new Intent(Intent.ACTION_INSERT, CalendarContract.Events.CONTENT_URI);
+                Calendar beginTime = Calendar.getInstance();
+                beginTime.set(2019, 2, 8, 0, 0);
+                Calendar endTime = Calendar.getInstance();
+                //endTime.set(2012, 0, 19, 10, 30);
+                calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis());
+                //calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis());
+                calendarIntent.putExtra(CalendarContract.Events.TITLE, item.getEvent_name());
+                calendarIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, item.getVenue_event());
+                mContext.startActivity(calendarIntent);
             }
         });
         //map intent
@@ -279,6 +313,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         TextView contact_button;
         ImageView calander;
         ImageView location;
+        TextView subscribe;
 
 
     }
