@@ -138,7 +138,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         }
 
         //mod apk for notifications
-        viewHolder.event_name.setOnClickListener(new View.OnClickListener() {
+        /*viewHolder.event_name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, NotificationModActivity.class);
@@ -146,7 +146,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
                 intent.putExtra("eventname", item.getEvent_name());
                 mContext.startActivity(intent);
             }
-        });
+        });*/
         //subscribe button
         viewHolder.subscribe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -313,7 +313,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         TextView contact_button;
         ImageView calander;
         ImageView location;
-        ImageView subscribe;
+        TextView subscribe;
 
 
     }

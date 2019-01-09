@@ -42,7 +42,7 @@ import static android.support.constraint.Constraints.TAG;
                 Context context = getApplicationContext();
                 String channelId = getString(R.string.default_notification_channel_id);
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(this,channelId)
-                                .setSmallIcon(R.drawable.callbutton)
+                                .setSmallIcon(R.drawable.notificationicon)
                                 //.setLargeIcon(bitmap)
                                 .setContentTitle(title)
                                 .setContentText(body)
@@ -62,6 +62,10 @@ import static android.support.constraint.Constraints.TAG;
                             "INFOTSAV",
                             NotificationManager.IMPORTANCE_HIGH);
                     notificationManager.createNotificationChannel(channel);
+                    builder.setSmallIcon(R.drawable.notificationicon);
+                }
+                else {
+                    builder.setSmallIcon(R.drawable.notificationicon);
                 }
                 notificationManager.notify(0 /* ID of notification */, builder.build());
     }

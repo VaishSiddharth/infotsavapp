@@ -439,15 +439,21 @@
 
         <!-- request button android:background="@color/btnRequest"-->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:weightSum="3"
             android:layout_gravity="center">
             <TextView
                 android:id="@+id/content_request_btn"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                android:elevation="4dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/layout_bg_button"
                 android:padding="10dp"
                 android:text="REGISTER"
@@ -457,9 +463,14 @@
                 android:textSize="20sp" />
             <TextView
                 android:id="@+id/contact_button"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                android:elevation="4dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/layout_bg_button"
                 android:padding="10dp"
                 android:text="CONTACT"
@@ -467,12 +478,23 @@
                 android:textAlignment="center"
                 android:textColor="@color/mainTextColor"
                 android:textSize="20sp" />
-            <ImageView
+            <TextView
                 android:id="@+id/notification"
-                android:layout_gravity="center"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/bell"/>
+                android:layout_width="0dp"
+                android:elevation="4dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/layout_bg_button"
+                android:padding="10dp"
+                android:text="NOTIFY"
+                android:fontFamily="@font/captianamericafont"
+                android:textAlignment="center"
+                android:textColor="@color/mainTextColor"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
