@@ -1,5 +1,6 @@
 package com.infotsav.test;
 
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -11,6 +12,7 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -40,10 +42,12 @@ import static android.support.constraint.Constraints.TAG;
                 Context context = getApplicationContext();
                 String channelId = getString(R.string.default_notification_channel_id);
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(this,channelId)
-                                .setSmallIcon(R.drawable.callbutton)
+                                .setSmallIcon(R.drawable.notificationicon)
                                 //.setLargeIcon(bitmap)
                                 .setContentTitle(title)
-                                .setContentText(body);
+                                .setContentText(body)
+                                .setDefaults(Notification.DEFAULT_ALL)
+                                 .setPriority(Notification.PRIORITY_HIGH);
                                 //.setStyle(new NotificationCompat.BigTextStyle().bigText(body));
                 Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
                 builder.setSound(alarmSound);
@@ -55,9 +59,13 @@ import static android.support.constraint.Constraints.TAG;
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     NotificationChannel channel = new NotificationChannel(channelId,
-                            "Channel human readable title",
-                            NotificationManager.IMPORTANCE_DEFAULT);
+                            "INFOTSAV",
+                            NotificationManager.IMPORTANCE_HIGH);
                     notificationManager.createNotificationChannel(channel);
+                    builder.setSmallIcon(R.drawable.notificationicon);
+                }
+                else {
+                    builder.setSmallIcon(R.drawable.notificationicon);
                 }
                 notificationManager.notify(0 /* ID of notification */, builder.build());
     }
