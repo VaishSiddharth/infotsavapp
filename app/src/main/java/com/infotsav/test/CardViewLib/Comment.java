@@ -1,4 +1,4 @@
-package com.infotsav.test.MainMenuUtils;
+package com.infotsav.test.CardViewLib;
 
 public class Comment {
     private Integer commentPersonPictureRes;

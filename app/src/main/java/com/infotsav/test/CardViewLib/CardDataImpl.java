@@ -1,4 +1,4 @@
-package com.infotsav.test.MainMenuUtils;
+package com.infotsav.test.CardViewLib;
 
 import com.ramotion.expandingcollection.ECCardData;
 

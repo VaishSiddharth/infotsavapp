@@ -1,4 +1,4 @@
-package com.infotsav.test;
+package com.infotsav.test.GlazyPager;
 
 import android.content.Context;
 import android.content.res.Resources;

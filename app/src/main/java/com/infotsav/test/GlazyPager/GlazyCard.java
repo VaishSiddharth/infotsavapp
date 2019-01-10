@@ -1,25 +1,25 @@
-package com.infotsav.test;
+package com.infotsav.test.GlazyPager;
 
 import android.graphics.Color;
 import android.widget.Button;
 
 import java.io.Serializable;
 
-import static com.infotsav.test.GlazyImageView.DEF_AUTO_TINT_MODE;
-import static com.infotsav.test.GlazyImageView.DEF_CUT_COUNT;
-import static com.infotsav.test.GlazyImageView.DEF_CUT_HEIGHT;
-import static com.infotsav.test.GlazyImageView.DEF_IMAGE_CUT_TYPE;
-import static com.infotsav.test.GlazyImageView.DEF_IMAGE_RES;
-import static com.infotsav.test.GlazyImageView.DEF_LINE_SPACING_DP;
-import static com.infotsav.test.GlazyImageView.DEF_SUB_TITLE_TEXT;
-import static com.infotsav.test.GlazyImageView.DEF_SUB_TITLE_TEXT_COLOR;
-import static com.infotsav.test.GlazyImageView.DEF_SUB_TITLE_TEXT_SIZE_DP;
-import static com.infotsav.test.GlazyImageView.DEF_TEXT_MARGIN_DP;
-import static com.infotsav.test.GlazyImageView.DEF_TINT_ALPHA;
-import static com.infotsav.test.GlazyImageView.DEF_TINT_COLOR;
-import static com.infotsav.test.GlazyImageView.DEF_TITLE_TEXT;
-import static com.infotsav.test.GlazyImageView.DEF_TITLE_TEXT_COLOR;
-import static com.infotsav.test.GlazyImageView.DEF_TITLE_TEXT_SIZE_DP;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_AUTO_TINT_MODE;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_CUT_COUNT;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_CUT_HEIGHT;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_IMAGE_CUT_TYPE;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_IMAGE_RES;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_LINE_SPACING_DP;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_SUB_TITLE_TEXT;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_SUB_TITLE_TEXT_COLOR;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_SUB_TITLE_TEXT_SIZE_DP;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_TEXT_MARGIN_DP;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_TINT_ALPHA;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_TINT_COLOR;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_TITLE_TEXT;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_TITLE_TEXT_COLOR;
+import static com.infotsav.test.GlazyPager.GlazyImageView.DEF_TITLE_TEXT_SIZE_DP;
 
 
 public class GlazyCard implements Serializable{

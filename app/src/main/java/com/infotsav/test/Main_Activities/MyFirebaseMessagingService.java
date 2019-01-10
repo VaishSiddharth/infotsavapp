@@ -1,4 +1,4 @@
-package com.infotsav.test;
+package com.infotsav.test.Main_Activities;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -22,6 +22,7 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.infotsav.test.Main_Activities.TreasurehuntActivity;
 import com.infotsav.test.Main_Activities.UpdatesActivity;
+import com.infotsav.test.R;
 
 import java.util.Map;
 

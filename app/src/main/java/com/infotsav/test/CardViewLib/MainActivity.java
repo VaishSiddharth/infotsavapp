@@ -1,4 +1,4 @@
-package com.infotsav.test.MainMenuUtils;
+package com.infotsav.test.CardViewLib;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -18,10 +18,9 @@ import android.widget.TextView;
 
 import com.infotsav.test.Main_Activities.AboutusActivity;
 import com.infotsav.test.Main_Activities.RegisterActivity;
-import com.infotsav.test.Main_Activities.Register_Activity;
 import com.infotsav.test.Main_Activities.TabContactUs;
 import com.infotsav.test.Main_Activities.TreasurehuntActivity;
-import com.infotsav.test.PagerActivity;
+import com.infotsav.test.GlazyPager.PagerActivity;
 import com.infotsav.test.R;
 import com.infotsav.test.Main_Activities.SponsorsActivity;
 import com.infotsav.test.Main_Activities.UpdatesActivity;

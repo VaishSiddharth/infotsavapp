@@ -1,4 +1,4 @@
-package com.infotsav.test;
+package com.infotsav.test.GlazyPager;
 
 /**
  * Created by kannan on 20/1/17.

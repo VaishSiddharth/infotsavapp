@@ -1,4 +1,4 @@
-package com.infotsav.test.MainMenuUtils;
+package com.infotsav.test.CardViewLib;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

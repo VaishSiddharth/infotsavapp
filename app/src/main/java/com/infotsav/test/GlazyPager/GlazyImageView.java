@@ -1,4 +1,4 @@
-package com.infotsav.test;
+package com.infotsav.test.GlazyPager;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -21,6 +21,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
+
+import com.infotsav.test.R;
 
 import java.util.ArrayList;
 
