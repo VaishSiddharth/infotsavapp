@@ -40,7 +40,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-import me.toptas.fancyshowcase.FancyShowCaseView;
 
 import static com.infotsav.test.Util.Constants.back1;
 import static com.infotsav.test.Util.Constants.back10;
@@ -167,7 +166,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
                                 .setTarget(new ViewTarget(viewHolder.calander))
                                 .setStyle(R.style.CustomShowcaseTheme2)
                                 .setContentTitle("PLANNER")
-                                .hideOnTouchOutside()
+                                //.hideOnTouchOutside()
                                 .setContentText("SET REMINDER FOR EVENT")
                                 .setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -176,13 +175,13 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
                                             case 0:
                                                 showcaseView.setShowcase(new ViewTarget(viewHolder.location), true);
                                                 showcaseView.setContentTitle("LOCATION");
-                                                showcaseView.setContentText("FIND THE ROUTE TO REACH THE VENUE");
+                                                showcaseView.setContentText("FIND THE WAY TO REACH THE VENUE");
                                                 break;
 
                                             case 1:
                                                 showcaseView.setShowcase(new ViewTarget(viewHolder.event_image), true);
                                                 showcaseView.setContentTitle("OPEN CARD");
-                                                showcaseView.setContentText("TAP TO GET SEE THE DETAILS OF THE EVENT");
+                                                showcaseView.setContentText("TAP TO SEE THE DETAILS OF THE EVENT");
                                                 break;
 
                                             case 2:
