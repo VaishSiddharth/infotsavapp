@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:weightSum="2">
 
-    <com.infotsav.test.GlazyImageView
+    <com.infotsav.test.GlazyPager.GlazyImageView
         android:id="@+id/glazy_image_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"

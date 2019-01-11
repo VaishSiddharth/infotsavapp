@@ -50,15 +50,16 @@ public class SponsorsAdapter extends BaseAdapter {
         TextView sponsor_dept=(TextView)view.findViewById(R.id.sponsor_department);
         sponsor_dept.setTypeface(font_sponsor);
         ImageView sponsor_image=(ImageView)view.findViewById(R.id.sponsor_image);
-        String url = mSponsors_detailslist.get(position).getSponsor_image();
+        /*String url = mSponsors_detailslist.get(position).getSponsor_image();
         if(url!=null) {
             Glide.with(mContext).load(url).into(sponsor_image);
 
-        }
+        }*/
 
 
 
         sponsor_name.setText(mSponsors_detailslist.get(position).getSponsor_name());
+        sponsor_image.setImageResource(mSponsors_detailslist.get(position).getSponsor_image());
         sponsor_level.setText(mSponsors_detailslist.get(position).getSponsor_level());
         sponsor_dept.setText(mSponsors_detailslist.get(position).getSponsor_dept());
         view.setTag(mSponsors_detailslist.get(position).getId());

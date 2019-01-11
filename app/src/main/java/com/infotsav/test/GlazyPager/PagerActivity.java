@@ -1,27 +1,12 @@
-package com.infotsav.test;
+package com.infotsav.test.GlazyPager;
 
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.WindowManager;
 
 
-import com.infotsav.test.GlazyCard;
-import com.infotsav.test.GlazyImageView;
-import com.infotsav.test.GlazyPagerTransformer;
-import com.infotsav.test.GlazyViewPager;
 import com.infotsav.test.R;
-import com.infotsav.test.Utils;
-
-import static com.infotsav.test.Util.Constants.all;
-import static com.infotsav.test.Util.Constants.gamiacs;
-import static com.infotsav.test.Util.Constants.managerial;
-import static com.infotsav.test.Util.Constants.online;
-import static com.infotsav.test.Util.Constants.onsite;
-import static com.infotsav.test.Util.Constants.robotics;
-import static com.infotsav.test.Util.Constants.school;
-import static com.infotsav.test.Util.Constants.technical;
 
 
 public class PagerActivity extends AppCompatActivity {

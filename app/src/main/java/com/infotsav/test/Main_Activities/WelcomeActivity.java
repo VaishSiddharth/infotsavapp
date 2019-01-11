@@ -1,4 +1,4 @@
-package com.infotsav.test;
+package com.infotsav.test.Main_Activities;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -8,9 +8,9 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
-import com.infotsav.test.MainMenuUtils.MainActivity;
+import com.infotsav.test.CardViewLib.MainActivity;
+import com.infotsav.test.R;
 
 public class WelcomeActivity extends AppCompatActivity {
     private final int SPLASH_DISPLAY_LENGTH = 2000;

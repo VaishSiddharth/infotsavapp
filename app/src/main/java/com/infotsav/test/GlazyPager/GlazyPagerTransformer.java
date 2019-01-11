@@ -1,4 +1,4 @@
-package com.infotsav.test;
+package com.infotsav.test.GlazyPager;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;

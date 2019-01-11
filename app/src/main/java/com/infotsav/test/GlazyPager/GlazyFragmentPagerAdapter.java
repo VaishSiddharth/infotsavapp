@@ -1,13 +1,9 @@
-package com.infotsav.test;
+package com.infotsav.test.GlazyPager;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
-
-import com.infotsav.test.AbstractFragmentPagerAdapter;
-import com.infotsav.test.GlazyCard;
-import com.infotsav.test.GlazyCardFragment;
 
 import java.util.ArrayList;
 

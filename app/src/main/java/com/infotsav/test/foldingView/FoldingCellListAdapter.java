@@ -1,11 +1,15 @@
 package com.infotsav.test.foldingView;
 
+import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.provider.CalendarContract;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -22,6 +26,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.github.amlcurran.showcaseview.ShowcaseView;
+import com.github.amlcurran.showcaseview.targets.ViewTarget;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.infotsav.test.Main_Activities.NotificationModActivity;
 import com.infotsav.test.Main_Activities.TreasurehuntActivity;
@@ -33,6 +39,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
+
 
 import static com.infotsav.test.Util.Constants.back1;
 import static com.infotsav.test.Util.Constants.back10;
@@ -61,6 +68,12 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
     private List<Item> mitem;
     private int backgrounduri[]={back1,back2,back3,back4,back5,back6,back7,back8,back9,back10,back11,back12};
     private Context mContext;
+    private ImageView calendarimage;
+    private ImageView locationimage;
+    private ShowcaseView showcaseView;
+    private int counter = 0;
+    private LinearLayout cardbackground;
+    private Boolean runOnce = false;
 
 
     public FoldingCellListAdapter(Context context, List<Item> objects) {
@@ -106,6 +119,8 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             //anim1.setRepeatCount(10);
             //anim1.setRepeatMode(Animation.ZORDER_BOTTOM);
             cell.startAnimation(anim1);
+            locationimage = viewHolder.location;
+            calendarimage = viewHolder.calander;
             // binding view parts to view holder
             viewHolder.price = cell.findViewById(R.id.title_price);
             viewHolder.time = cell.findViewById(R.id.title_time_label);
@@ -136,6 +151,59 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             }
             viewHolder = (ViewHolder) cell.getTag();
         }
+        SharedPreferences wmbPreference = PreferenceManager.getDefaultSharedPreferences(mContext);
+        boolean isFirstRun = wmbPreference.getBoolean("FIRSTRUN", true);
+        //Log.e(TAG, "Showcase working i "+isFirstRun);
+        if (isFirstRun)
+        {
+            Log.e(TAG, "Showcase working "+isFirstRun);
+            if(position==0 && !runOnce) {
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        showcaseView = new ShowcaseView.Builder((Activity) mContext)
+                                .setTarget(new ViewTarget(viewHolder.calander))
+                                .setStyle(R.style.CustomShowcaseTheme2)
+                                .setContentTitle("PLANNER")
+                                //.hideOnTouchOutside()
+                                .setContentText("SET REMINDER FOR EVENT")
+                                .setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        switch (counter) {
+                                            case 0:
+                                                showcaseView.setShowcase(new ViewTarget(viewHolder.location), true);
+                                                showcaseView.setContentTitle("LOCATION");
+                                                showcaseView.setContentText("FIND THE WAY TO REACH THE VENUE");
+                                                break;
+
+                                            case 1:
+                                                showcaseView.setShowcase(new ViewTarget(viewHolder.event_image), true);
+                                                showcaseView.setContentTitle("OPEN CARD");
+                                                showcaseView.setContentText("TAP TO SEE THE DETAILS OF THE EVENT");
+                                                break;
+
+                                            case 2:
+                                                showcaseView.hide();
+                                                setAlpha(1.0f, viewHolder.location,viewHolder.calander,viewHolder.cardBackground);
+                                                break;
+                                        }
+                                        counter++;
+                                    }
+                                })
+                                .build();
+                    }
+                }, 1000);
+                runOnce = true;
+            }
+            // Code to run once
+            SharedPreferences.Editor editor = wmbPreference.edit();
+            editor.putBoolean("FIRSTRUN", false).apply();
+
+        }
+
+
 
         //mod apk for notifications
         /*viewHolder.event_name.setOnClickListener(new View.OnClickListener() {
@@ -263,6 +331,16 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
 
         return cell;
     }
+
+    private void setAlpha(float alpha, View... views) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            for (View view : views) {
+                view.setAlpha(alpha);
+            }
+        }
+    }
+
+
 
     private int getRandomNumber() {
 

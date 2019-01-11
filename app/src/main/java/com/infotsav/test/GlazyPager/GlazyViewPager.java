@@ -1,11 +1,9 @@
-package com.infotsav.test;
+package com.infotsav.test.GlazyPager;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
-
-import com.infotsav.test.GlazyPagerTransformer;
 
 
 /**

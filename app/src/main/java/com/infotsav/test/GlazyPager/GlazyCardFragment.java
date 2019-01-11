@@ -1,27 +1,17 @@
-package com.infotsav.test;
+package com.infotsav.test.GlazyPager;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.infotsav.test.R;
 import com.infotsav.test.foldingView.FoldingActivity;
-
-import static com.infotsav.test.Util.Constants.all;
-import static com.infotsav.test.Util.Constants.gamiacs;
-import static com.infotsav.test.Util.Constants.managerial;
-import static com.infotsav.test.Util.Constants.online;
-import static com.infotsav.test.Util.Constants.onsite;
-import static com.infotsav.test.Util.Constants.robotics;
-import static com.infotsav.test.Util.Constants.school;
-import static com.infotsav.test.Util.Constants.technical;
 
 public class GlazyCardFragment extends Fragment {
 
