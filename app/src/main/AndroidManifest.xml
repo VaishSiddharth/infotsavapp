@@ -34,15 +34,18 @@
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id" />
 
-        <activity android:name=".CardViewLib.MainActivity" />
+        <activity android:name=".CardViewLib.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Main_Activities.EventsActivity" />
         <activity android:name=".Main_Activities.RegisterActivity" />
         <activity android:name=".Main_Activities.UpdatesActivity" />
         <activity android:name=".Main_Activities.SponsorsActivity" />
-        <activity android:name=".foldingView.FoldingActivity" />
+        <activity android:name=".foldingView.FoldingActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Main_Activities.TreasurehuntActivity" />
         <activity android:name=".Main_Activities.AboutusActivity" />
-        <activity android:name=".GlazyPager.PagerActivity" />
+        <activity android:name=".GlazyPager.PagerActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Main_Activities.LoginActivity" />
         <activity android:name=".Main_Activities.Register_Activity" />
         <activity

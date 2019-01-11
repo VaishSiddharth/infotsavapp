@@ -66,7 +66,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
     private View.OnClickListener defaultRequestBtnClickListener;
     private View.OnClickListener contactEventHead;
     private List<Item> mitem;
-    private int backgrounduri[]={back1,back2,back3,back4,back5,back6,back7,back8,back9,back10,back11,back12};
+    private int backgrounduri[]={back9,back11,back3,back4,back12,back6,back7,back8,back10,back5,back2,back1};
     private Context mContext;
     private ImageView calendarimage;
     private ImageView locationimage;
