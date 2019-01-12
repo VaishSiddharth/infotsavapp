@@ -242,97 +242,106 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
         viewHolder.calander.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent calendarIntent = new Intent(Intent.ACTION_INSERT, CalendarContract.Events.CONTENT_URI);
-                Calendar beginTime = Calendar.getInstance();
-                beginTime.set(2019, 2, 8, 0, 0);
-                Calendar endTime = Calendar.getInstance();
-                //endTime.set(2012, 0, 19, 10, 30);
-                calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis());
-                //calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis());
-                calendarIntent.putExtra(CalendarContract.Events.TITLE, item.getEvent_name());
-                calendarIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, item.getVenue_event());
-                mContext.startActivity(calendarIntent);
+                try {
+                    Intent calendarIntent = new Intent(Intent.ACTION_INSERT, CalendarContract.Events.CONTENT_URI);
+                    Calendar beginTime = Calendar.getInstance();
+                    beginTime.set(2019, 2, 8, 0, 0);
+                    Calendar endTime = Calendar.getInstance();
+                    //endTime.set(2012, 0, 19, 10, 30);
+                    calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis());
+                    //calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis());
+                    calendarIntent.putExtra(CalendarContract.Events.TITLE, item.getEvent_name());
+                    calendarIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, item.getVenue_event());
+                    mContext.startActivity(calendarIntent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Toast.makeText(mContext,"Install/Update Google Calendar to use this feature.",Toast.LENGTH_LONG).show();
+                }
             }
         });
         //map intent
         viewHolder.location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String latlong="";
-                if(item.getVenue_event().equals(locations[0]))//mg
-                {
-                    latlong="26.25008, 78.17640";}
-                if(item.getVenue_event().equals(locations[1]))//ad
-                {
-                    latlong="26.24942, 78.17403"; }
-                if(item.getVenue_event().equals(locations[2]))//lrc
-                {
-                    latlong="26.24909, 78.17265"; }
-                if(item.getVenue_event().equals(locations[3]))//na
-                {
-                    latlong="26.24846, 78.17360"; }
-                if(item.getVenue_event().equals(locations[4]))//cafe
-                {
-                    latlong="26.24950, 78.17238"; }
-                if(item.getVenue_event().equals(locations[5]))//cr
-                {
-                    latlong="26.24888, 78.17161"; }
-                if(item.getVenue_event().equals(locations[6]))//b2
-                {
-                    latlong="26.25033608687278, 78.17326168608406"; }
-                if(item.getVenue_event().equals(locations[7]))//lt1
-                {
-                    latlong="26.25002, 78.17296"; }
-                if(item.getVenue_event().equals(locations[8]))//b3
-                {
-                    latlong="(26.25014, 78.17262"; }
-                if(item.getVenue_event().equals(locations[9]))//b4
-                {
-                    latlong="26.25053, 78.17254"; }
-                if(item.getVenue_event().equals(locations[10]))//b5
-                {
-                    latlong="26.25090, 78.17247"; }
-                if(item.getVenue_event().equals(locations[11]))//Lt2
-                {
-                    latlong="26.25118, 78.17268"; }
-                if(item.getVenue_event().equals(locations[12]))//b6
-                {
-                    latlong="26.25105, 78.17300"; }
-                if(item.getVenue_event().equals(locations[13]))//b1
-                {
-                    latlong="26.25066, 78.17311"; }
-                if(item.getVenue_event().equals(locations[14]))//hosp
-                {
-                    latlong="26.25036, 78.17352"; }
-                if(item.getVenue_event().equals(locations[15]))//oat
-                {
-                    latlong="26.24636, 78.17207"; }
-                if(item.getVenue_event().equals(locations[16]))//sports
-                {
-                    latlong="26.24655, 78.17255"; }
-                if(item.getVenue_event().equals(locations[17]))//mdp
-                {
-                    latlong="26.24888, 78.17706"; }
-                if(item.getVenue_event().equals(locations[18]))//vh
-                {
-                    latlong="26.24940, 78.16977"; }
-                if(item.getVenue_event().equals(locations[19]))//bh3
-                {
-                    latlong="26.24994, 78.16945"; }
-                if(item.getVenue_event().equals(locations[20]))//bh1
-                {
-                    latlong="26.25057, 78.16940"; }
-                if(item.getVenue_event().equals(locations[21]))//bh2
-                {
-                    latlong="26.24720, 78.17627"; }
-                if(item.getVenue_event().equals(locations[22]))//gh
-                {
-                    latlong="26.24632, 78.17410"; }
-                Uri gmmIntentUri = Uri.parse("google.navigation:q="+latlong+"&mode=w");
-                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-                mapIntent.setPackage("com.google.android.apps.maps");
-                if (mapIntent.resolveActivity(mContext.getPackageManager()) != null) {
-                    mContext.startActivity(mapIntent);
+                try {
+                    String latlong="";
+                    if(item.getVenue_event().equals(locations[0]))//mg
+                    {
+                        latlong="26.25008, 78.17640";}
+                    if(item.getVenue_event().equals(locations[1]))//ad
+                    {
+                        latlong="26.24942, 78.17403"; }
+                    if(item.getVenue_event().equals(locations[2]))//lrc
+                    {
+                        latlong="26.24909, 78.17265"; }
+                    if(item.getVenue_event().equals(locations[3]))//na
+                    {
+                        latlong="26.24846, 78.17360"; }
+                    if(item.getVenue_event().equals(locations[4]))//cafe
+                    {
+                        latlong="26.24950, 78.17238"; }
+                    if(item.getVenue_event().equals(locations[5]))//cr
+                    {
+                        latlong="26.24888, 78.17161"; }
+                    if(item.getVenue_event().equals(locations[6]))//b2
+                    {
+                        latlong="26.25033608687278, 78.17326168608406"; }
+                    if(item.getVenue_event().equals(locations[7]))//lt1
+                    {
+                        latlong="26.25002, 78.17296"; }
+                    if(item.getVenue_event().equals(locations[8]))//b3
+                    {
+                        latlong="(26.25014, 78.17262"; }
+                    if(item.getVenue_event().equals(locations[9]))//b4
+                    {
+                        latlong="26.25053, 78.17254"; }
+                    if(item.getVenue_event().equals(locations[10]))//b5
+                    {
+                        latlong="26.25090, 78.17247"; }
+                    if(item.getVenue_event().equals(locations[11]))//Lt2
+                    {
+                        latlong="26.25118, 78.17268"; }
+                    if(item.getVenue_event().equals(locations[12]))//b6
+                    {
+                        latlong="26.25105, 78.17300"; }
+                    if(item.getVenue_event().equals(locations[13]))//b1
+                    {
+                        latlong="26.25066, 78.17311"; }
+                    if(item.getVenue_event().equals(locations[14]))//hosp
+                    {
+                        latlong="26.25036, 78.17352"; }
+                    if(item.getVenue_event().equals(locations[15]))//oat
+                    {
+                        latlong="26.24636, 78.17207"; }
+                    if(item.getVenue_event().equals(locations[16]))//sports
+                    {
+                        latlong="26.24655, 78.17255"; }
+                    if(item.getVenue_event().equals(locations[17]))//mdp
+                    {
+                        latlong="26.24888, 78.17706"; }
+                    if(item.getVenue_event().equals(locations[18]))//vh
+                    {
+                        latlong="26.24940, 78.16977"; }
+                    if(item.getVenue_event().equals(locations[19]))//bh3
+                    {
+                        latlong="26.24994, 78.16945"; }
+                    if(item.getVenue_event().equals(locations[20]))//bh1
+                    {
+                        latlong="26.25057, 78.16940"; }
+                    if(item.getVenue_event().equals(locations[21]))//bh2
+                    {
+                        latlong="26.24720, 78.17627"; }
+                    if(item.getVenue_event().equals(locations[22]))//gh
+                    {
+                        latlong="26.24632, 78.17410"; }
+                    Uri gmmIntentUri = Uri.parse("google.navigation:q="+latlong+"&mode=w");
+                    Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                    mapIntent.setPackage("com.google.android.apps.maps");
+                    if (mapIntent.resolveActivity(mContext.getPackageManager()) != null) {
+                        mContext.startActivity(mapIntent);
+                    }
+                } catch (Exception e) {
+                    Toast.makeText(mContext,"Install/Update Google Maps to use this feature.",Toast.LENGTH_LONG).show();
                 }
             }
         });
