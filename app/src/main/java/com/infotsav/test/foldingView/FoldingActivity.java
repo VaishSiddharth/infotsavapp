@@ -11,6 +11,7 @@ import android.view.animation.AlphaAnimation;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
@@ -56,13 +57,13 @@ public class FoldingActivity extends AppCompatActivity {
 
         // get our list view
         theListView = findViewById(R.id.mainListView);
-        final ProgressBar progressBar=findViewById(R.id.progressBar3);
-        theListView.postDelayed(new Runnable() {
+        final TextView progressBar=findViewById(R.id.progressBar3);
+        /*theListView.postDelayed(new Runnable() {
             public void run() {
                 //theListView.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.GONE);
             }
-        }, 1000);
+        }, 1000);*/
 
         // prepare elements to display
         final ArrayList<Item> items = Item.getTestingList();
@@ -148,6 +149,11 @@ public class FoldingActivity extends AppCompatActivity {
                     }
                 });
                 theListView.setAdapter(adapter);
+                if(!(theListView.getCount()==0)) {
+                    progressBar.setVisibility(View.GONE);
+                    //Toast.makeText(getApplicationContext(),"works",Toast.LENGTH_LONG).show();
+
+                }
                 theListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {

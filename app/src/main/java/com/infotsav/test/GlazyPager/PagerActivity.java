@@ -39,32 +39,32 @@ public class PagerActivity extends AppCompatActivity {
                 "there are a long line of those who qualify, including an alien named Beta Ray Bill. During a fight, Bill" +
                 " managed to grab Mjolnir, which deemed him worthy. They were both transported back to Asgard where Odin " +
                 "had the two fight it out to see who got to keep the hammer. Bill won, but being the upstanding guy he is, " +
-                "refused to kill Thor. Odin gave Mjolnir back to Thor and made a new hammer for Bill.";
+                "refused to kill Thor. Odin gave Mjolnir back to Thor and made a new hammer for Bill.\n\n";
 
         String desc_loki = "As a prank, Loki once transformed Thor into a frog. An actual frog. Thor subsequently participated" +
                 " in a rats vs. frogs war in New York’s Central Park. Even when he got his hammer back, he transformed back only " +
-                "half way, to a frog man. Fellow god and humorless friend Volstagg ultimately returned Thor to his fully normal self";
+                "half way, to a frog man. Fellow god and humorless friend Volstagg ultimately returned Thor to his fully normal self \n\n\n";
 
         String desc_michael = "Michael Jackson tried to buy Marvel Comics in the early 1990' so that he could play Spider-Man in his " +
                 "own produced movie. According to Marvel legend Stan Lee, Jackson had a particular liking to the web-slinging " +
                 "neighbourhood friend, Spider-Man. Eventually, Jacko was unable to secure the rights to Marvel and his dream of " +
-                "swinging through New York City with spidey senses was gone.";
+                "swinging through New York City with spidey senses was gone.\n\n\n\n\n";
 
         String desc_gamora = "Guardians fans might be surprised to find out that Saldana (Gamora) was a dancer for most of her early life." +
                 " The actress studied ballet, but eventually chose acting since it gave her a voice. Saldana said that dance uses your whole " +
                 "body except for your voice, and she didn't want to be voiceless. Also, she was told she didn't have the feet for ballet, " +
-                "and didn't want to be sentenced to a life of an in-house background dancer.";
+                "and didn't want to be sentenced to a life of an in-house background dancer. \n\n\n\n";
 
         String desc_hulk = "In the debut of Hulk, Stan Lee chose gray for the Hulk because he wanted a color that did not suggest any" +
                 " particular ethnic group. Colorist Stan Goldberg, however, had problems with the gray coloring, resulting in different " +
                 "shades of grey, and even green, in the issue. After seeing the first published issue, Lee chose to change the skin color " +
-                "to green.";
+                "to green. \n\n\n\n\n";
 
         String desc_mandarin = "The Mandarin is the true villain in the world of Iron Man comics. He is the one who keeps bringing new " +
                 "twists and turns in the life of Tony Stark. And he is the one who keeps escaping and evades every attack. But in the movie" +
                 " he was wandered off as a Gag piece. Initially Jon Favreau wanted The Mandarin as the main anti-hero in the first installment" +
                 " of Iron Man. But then decided against it because he felt it would see as too strong for the first part. Hence, dropped the " +
-                "idea altogether. And as history has it, the second part wavered the whole character as a mere pawn of the story.";
+                "idea altogether.\n\n";
 
         String desc_ironman = "Terrence Howard had a three movie contract with Marvel, with ‘Iron Man’ as the first project. Also, he was" +
                 " promised an increased pay if the movie Iron Man became a success and was turned into a franchisee. The money deal offered " +
@@ -76,7 +76,7 @@ public class PagerActivity extends AppCompatActivity {
                 " Pet Avengers." +
                 "Aside from acting, Jeremy Renner also has quite a few hidden talents. Renner renovates houses, fixing and flipping them" +
                 " for a higher price. It's a business that helped him and business partner Kristoffer Winter during their struggling actor " +
-                "days. But this is just one of Renner's many skills.";
+                "days. But this is just one of Renner's many skills. \n\n\n\n\n";
 
         mPagerAdapter.addCardItem(
                 new GlazyCard()
