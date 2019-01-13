@@ -45,7 +45,7 @@
                     android:padding="2dp"
                     android:text="THE MAANSINGH"
                     android:textColor="@android:color/black"
-                    android:textSize="15sp"/>
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/sponsor_level"
@@ -56,7 +56,8 @@
                     android:padding="2dp"
                     android:textColor="@android:color/black"
                     android:text="Co-Sponsor"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:visibility="gone"/>
 
 
                 <TextView
@@ -68,7 +69,8 @@
                     android:padding="2dp"
                     android:textColor="@android:color/black"
                     android:text="EDM Night"
-                    android:textSize="10sp" />
+                    android:textSize="10sp"
+                    android:visibility="gone"/>
             </LinearLayout>
         </LinearLayout>
 

@@ -43,7 +43,7 @@ public class SponsorsAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = View.inflate(mContext,R.layout.sponsors_list,null);
         TextView sponsor_name=(TextView)view.findViewById(R.id.sponsor_name);
-        Typeface font_sponsor=Typeface.createFromAsset(mContext.getAssets(),"fonts/captainmarvel.otf");
+        Typeface font_sponsor=Typeface.createFromAsset(mContext.getAssets(),"fonts/deadpoolmovie.otf");
         sponsor_name.setTypeface(font_sponsor);
         TextView sponsor_level=(TextView)view.findViewById(R.id.sponsor_level);
         sponsor_level.setTypeface(font_sponsor);
