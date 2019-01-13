@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".Main_Activities.WelcomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".MyFirebaseMessagingService">
+        <service android:name=".Main_Activities.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
@@ -34,15 +34,18 @@
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id" />
 
-        <activity android:name=".MainMenuUtils.MainActivity" />
+        <activity android:name=".CardViewLib.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Main_Activities.EventsActivity" />
         <activity android:name=".Main_Activities.RegisterActivity" />
         <activity android:name=".Main_Activities.UpdatesActivity" />
         <activity android:name=".Main_Activities.SponsorsActivity" />
-        <activity android:name=".foldingView.FoldingActivity" />
+        <activity android:name=".foldingView.FoldingActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Main_Activities.TreasurehuntActivity" />
         <activity android:name=".Main_Activities.AboutusActivity" />
-        <activity android:name=".PagerActivity" />
+        <activity android:name=".GlazyPager.PagerActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Main_Activities.LoginActivity" />
         <activity android:name=".Main_Activities.Register_Activity" />
         <activity

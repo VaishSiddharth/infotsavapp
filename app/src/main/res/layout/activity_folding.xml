@@ -2,16 +2,21 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#424242"
     android:orientation="horizontal"
+    android:background="@drawable/gradient_bg"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ProgressBar
+    <TextView
         android:id="@+id/progressBar3"
-        style="?android:attr/progressBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Loading..."
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/deadpoolfont"
+        android:textSize="25sp"
+        />
 
     <ListView
         android:id="@+id/mainListView"

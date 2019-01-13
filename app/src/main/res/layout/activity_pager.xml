@@ -19,7 +19,7 @@
         android:textSize="25sp"
         android:visibility="gone"/>
 
-    <com.infotsav.test.GlazyViewPager
+    <com.infotsav.test.GlazyPager.GlazyViewPager
         android:id="@+id/pager"
         android:layout_below="@+id/title"
         android:layout_above="@+id/copyright"
@@ -28,7 +28,7 @@
         android:clickable="true"
         android:paddingLeft="40dp"
         android:paddingRight="40dp">
-    </com.infotsav.test.GlazyViewPager>
+    </com.infotsav.test.GlazyPager.GlazyViewPager>
 
     <TextView
         android:id="@+id/copyright"

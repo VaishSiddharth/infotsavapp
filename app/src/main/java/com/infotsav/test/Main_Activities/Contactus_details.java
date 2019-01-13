@@ -11,12 +11,12 @@ public class Contactus_details {
     private String email;
     private String dept;
     private String call;
-    private String image;
+    private int image;
 
     public Contactus_details() {
     }
 
-    public Contactus_details(String id, String name, String email, String dept, String call,String image) {
+    public Contactus_details(String id, String name, String email, String dept, String call,int image) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -66,7 +66,7 @@ public class Contactus_details {
         this.call = call;
     }
 
-    public String getImage() {
+    public int getImage() {
         return image;
     }
 
