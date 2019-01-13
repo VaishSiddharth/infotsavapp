@@ -198,7 +198,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
                                 })
                                 .build();
                     }
-                }, 1000);
+                }, 300);
                 runOnce = true;
             }
             // Code to run once
