@@ -80,6 +80,16 @@ public class PagerActivity extends AppCompatActivity {
 
         mPagerAdapter.addCardItem(
                 new GlazyCard()
+                        .withTitle("ONLINE")
+                        .withSubTitle("EVENTS")
+                        .withDescription(desc_gamora.toUpperCase())
+                        .withImageRes(R.drawable.rocketonline)
+                        .withImageCutType(GlazyImageView.ImageCutType.WAVE)
+                        .withImageCutHeightDP(40)
+        );
+
+        mPagerAdapter.addCardItem(
+                new GlazyCard()
                         .withTitle("ONSITE")
                         .withSubTitle("EVENTS")
                         .withDescription(desc_thor.toUpperCase())
@@ -88,14 +98,33 @@ public class PagerActivity extends AppCompatActivity {
                         .withImageCutHeightDP(40)
         );
 
+        mPagerAdapter.addCardItem(
+                new GlazyCard()
+                        .withTitle("TECHNICAL")
+                        .withSubTitle("EVENTS")
+                        .withDescription(desc_ironman.toUpperCase())
+                        .withImageRes(R.drawable.irontechnical)
+                        .withImageCutType(GlazyImageView.ImageCutType.LINE_POSITIVE)
+                        .withImageCutHeightDP(40)
+        );
 
         mPagerAdapter.addCardItem(
                 new GlazyCard()
-                        .withTitle("ROBOTICS")
+                        .withTitle("SCHOOL")
                         .withSubTitle("EVENTS")
-                        .withDescription(desc_mandarin.toUpperCase())
-                        .withImageRes(R.drawable.ultronrobotics)
+                        .withDescription(desc_michael.toUpperCase())
+                        .withImageRes(R.drawable.spidermanschool)
                         .withImageCutType(GlazyImageView.ImageCutType.ARC)
+                        .withImageCutHeightDP(40)
+        );
+
+        mPagerAdapter.addCardItem(
+                new GlazyCard()
+                        .withTitle("MANAGERIAL")
+                        .withSubTitle("EVENTS")
+                        .withDescription(desc_avengers.toUpperCase())
+                        .withImageRes(R.drawable.captainmanagerial)
+                        .withImageCutType(GlazyImageView.ImageCutType.WAVE)
                         .withImageCutHeightDP(40)
         );
 
@@ -108,42 +137,18 @@ public class PagerActivity extends AppCompatActivity {
                         .withImageCutType(GlazyImageView.ImageCutType.LINE_POSITIVE)
                         .withImageCutHeightDP(40)
         );
+
         mPagerAdapter.addCardItem(
                 new GlazyCard()
-                        .withTitle("MANAGERIAL")
+                        .withTitle("ROBOTICS")
                         .withSubTitle("EVENTS")
-                        .withDescription(desc_avengers.toUpperCase())
-                        .withImageRes(R.drawable.captainmanagerial)
-                        .withImageCutType(GlazyImageView.ImageCutType.WAVE)
-                        .withImageCutHeightDP(40)
-        );
-        mPagerAdapter.addCardItem(
-                new GlazyCard()
-                        .withTitle("SCHOOL")
-                        .withSubTitle("EVENTS")
-                        .withDescription(desc_michael.toUpperCase())
-                        .withImageRes(R.drawable.spidermanschool)
+                        .withDescription(desc_mandarin.toUpperCase())
+                        .withImageRes(R.drawable.ultronrobotics)
                         .withImageCutType(GlazyImageView.ImageCutType.ARC)
                         .withImageCutHeightDP(40)
         );
-        mPagerAdapter.addCardItem(
-                new GlazyCard()
-                        .withTitle("TECHNICAL")
-                        .withSubTitle("EVENTS")
-                        .withDescription(desc_ironman.toUpperCase())
-                        .withImageRes(R.drawable.irontechnical)
-                        .withImageCutType(GlazyImageView.ImageCutType.LINE_POSITIVE)
-                        .withImageCutHeightDP(40)
-        );
-        mPagerAdapter.addCardItem(
-                new GlazyCard()
-                        .withTitle("ONLINE")
-                        .withSubTitle("EVENTS")
-                        .withDescription(desc_gamora.toUpperCase())
-                        .withImageRes(R.drawable.rocketonline)
-                        .withImageCutType(GlazyImageView.ImageCutType.WAVE)
-                        .withImageCutHeightDP(40)
-        );
+
+
         /*mPagerAdapter.addCardItem(
                 new GlazyCard()
                         .withTitle("ALL")
