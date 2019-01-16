@@ -171,6 +171,7 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
                                 .setStyle(R.style.CustomShowcaseTheme2)
                                 .setContentTitle("PLANNER")
                                 //.hideOnTouchOutside()
+                                .blockAllTouches()
                                 .setContentText("SET REMINDER FOR EVENT")
                                 .setOnClickListener(new View.OnClickListener() {
                                     @Override
