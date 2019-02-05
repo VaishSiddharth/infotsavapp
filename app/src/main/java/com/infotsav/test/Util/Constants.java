@@ -79,44 +79,44 @@ public class Constants {
             "Going round and round…………… \n" +
             "Am I easy to find? probably not!!\n" +
             "But you have crossed me before!! ";
-    public static String pc4="A place of all love\n" +
+    public static String r5="A place of all love\n" +
             "With balls from above\n" +
             "The way you must get\n" +
             "Is split with a net";
-    public static String r5="What is the real name red skull";
-    public static String pc5="Take note of all I say\n" +
+    public static String pc5="What is the real name red skull";
+    public static String r6="Take note of all I say\n" +
             "Observed only by day\n" +
             "Looked at by all bar teach\n" +
             "With pen to me you reach";
-    public static String r6="In Guardians of the Galaxy, what is the name of the dog in the Collector Taneleer Tivan's museum?";
-    public static String pc6="Caution is needed going this way\n" +
+    public static String pc6="In Guardians of the Galaxy, what is the name of the dog in the Collector Taneleer Tivan's museum?";
+    public static String r7="Caution is needed going this way\n" +
             "A tarmac place of bay bay bay\n" +
             "Now is the time to leave \n" +
             "If you leave from here you’ll go far";
-    public static String r7="Your Answer contains 10 letters with one of the letter as “L” find the remaining words by filling the table\n" +
+    public static String pc7="Your Answer contains 10 letters with one of the letter as “L” find the remaining words by filling the table\n" +
             "What does the word I stand for in the acronym S.H.I.E.L.D ?\n" +
             "What is the name of the Super Soldier project in Captain America: The First Avenger?\n" +
             "What alien race does Ronan the Accuser belong to?\n" +
             "What virus was Pepper Potts injected with in Iron Man 3?\n" +
             "What is the name of star lords mother?\n" +
             "which of the infinity stones can alter reality?";
-    public static String pc7="A room full of stares \n" +
+    public static String r8="A room full of stares \n" +
             "Cramped with people……………\n" +
             "Going round and round…………… \n" +
             "Am I easy to find? probably not!!\n" +
             "But you have crossed me before!! ";
-    public static String r8="I have no voice but I can teach you all there is to know.\n" +
+    public static String r9="I have no voice but I can teach you all there is to know.\n" +
             "I have spines and hinges but I am not a door.\n" +
             "Once I’ve told you all, I cannot tell you more.\n" +
             "What am I?";
-    public static String pc8="How many versions of the Iron Man armor has Tony Stark made?";
-    public static String r9="The room darker than night\n" +
+    public static String pc9="How many versions of the Iron Man armor has Tony Stark made?";
+    public static String r10="The room darker than night\n" +
             "Which is only known to a few\n" +
             "With a stink and an eight ";
-    public static String pc9="What is the homeworld of frost gaints called?";
-    public static String r10="Close to the words of life stay I,\n" +
+    public static String pc10="What is the homeworld of frost gaints called?";
+    public static String r11="Close to the words of life stay I,\n" +
             "But I wither, wane, and grow dry.";
-    public static String pc10="Your Answer contains 6 letter with one of the letter as “C” find the other words by filling the table\n" +
+    public static String pc11="Your Answer contains 6 letter with one of the letter as “C” find the other words by filling the table\n" +
             "\n" +
             "What does the word I stand for in the acronym S.H.I.E.L.D ?\n" +
             "What is the name of the Super Soldier project in Captain America: The First Avenger?\n" +
@@ -124,14 +124,16 @@ public class Constants {
             "What virus was Pepper Potts injected with in Iron Man 3?\n" +
             "What is the name of star lords mother?\n" +
             "which of the infinity stones can alter reality?";
-    public static String r11="A room full of stares \n" +
+    public static String r12="A room full of stares \n" +
             "Cramped with people……………\n" +
             "Going round and round…………… \n" +
             "Am I easy to find? probably not!!\n" +
             "But you have crossed me before!! ";
-    public static String pc11="";
-    public static String r12="";
+    public static String pc4="";
+    public static String pc8="";
     public static String pc12="";
+    public static String pcfake="This is a Fake QR";
+    public static String rfake="Try another QR";
 
 
 

@@ -1,49 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/comingsoonlayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="40dp"
-    android:layout_gravity="center"
-    android:gravity="center"
-    android:padding="20dp"
-    tools:context=".Main_Activities.TreasurehuntActivity">
-
-    <TextView
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/comingsoonlayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:layout_margin="20dp"
         android:padding="5dp"
-        android:text="RIDDLE"
-        android:textColor="@android:color/black"
-        android:textSize="15sp" />
-    <TextView
-        android:id="@+id/riddle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textSize="12sp" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="5dp"
-        android:gravity="center"
-        android:textColor="@android:color/black"
-        android:text="PASSWORD CRACKER"
-        android:textSize="15sp" />
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        tools:context=".Main_Activities.TreasurehuntActivity">
 
-    <TextView
-        android:id="@+id/passwordcracker"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textSize="12sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="RIDDLE"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/riddle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/crackertext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:text="PASSWORD CRACKER"
+            android:textSize="18sp" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/passwordcracker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:textSize="15sp" />
+        <ImageView
+            android:id="@+id/image_th"
+            android:padding="15dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"/>
+
+    </LinearLayout>
+</ScrollView>

@@ -9,10 +9,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.hardware.Camera;
+import android.media.MediaScannerConnection;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
@@ -22,6 +25,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +35,9 @@ import com.infotsav.test.CardViewLib.MainActivity;
 import com.infotsav.test.R;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import cn.pedant.SweetAlert.Constants;
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -52,6 +59,7 @@ import static com.infotsav.test.Util.Constants.pc6;
 import static com.infotsav.test.Util.Constants.pc7;
 import static com.infotsav.test.Util.Constants.pc8;
 import static com.infotsav.test.Util.Constants.pc9;
+import static com.infotsav.test.Util.Constants.pcfake;
 import static com.infotsav.test.Util.Constants.r1;
 import static com.infotsav.test.Util.Constants.r10;
 import static com.infotsav.test.Util.Constants.r11;
@@ -64,6 +72,7 @@ import static com.infotsav.test.Util.Constants.r6;
 import static com.infotsav.test.Util.Constants.r7;
 import static com.infotsav.test.Util.Constants.r8;
 import static com.infotsav.test.Util.Constants.r9;
+import static com.infotsav.test.Util.Constants.rfake;
 
 public class TreasurehuntActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
@@ -84,8 +93,9 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
     final String str4 = "vibranium";
     final String str8 = "levitation";
     final String str12 = "carter";
-    TextView riddle, cracker;
+    TextView riddle, cracker,crackertext;
     EditText enterpassword;
+    ImageView image_th;
 
 
     @Override
@@ -185,7 +195,10 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
         final String myResult = result.getText();
         riddle = viewriddle.findViewById(R.id.riddle);
         cracker = viewriddle.findViewById(R.id.passwordcracker);
+        crackertext=viewriddle.findViewById(R.id.crackertext);
         enterpassword = view.findViewById(R.id.enterpassword);
+        image_th=viewriddle.findViewById(R.id.image_th);
+        final Drawable d=getResources().getDrawable(R.drawable.route24);
         Log.d("QRCodeScanner", result.getText());
         Log.d("QRCodeScanner", result.getBarcodeFormat().toString());
 
@@ -196,53 +209,86 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
             @Override
             public void onClick(SweetAlertDialog sweetAlertDialog) {
                 sweetAlertDialog1.dismiss();
+                crackertext.setVisibility(View.VISIBLE);
                 if(myResult.equalsIgnoreCase("asdfghjkqwertyui")){
-                    fun(str1,sweetAlertDialog1,view,viewriddle,r1,pc1);
+                    image_th.setVisibility(View.GONE);
+                    fun(str1,sweetAlertDialog1,view,viewriddle,r1,pc1,d);
                 }
                 else if(myResult.equalsIgnoreCase("fghjrtyuiodfghjkldfghjkl;")){
-                    fun(str2,sweetAlertDialog1,view,viewriddle,r2,pc2);
+                    image_th.setVisibility(View.GONE);
+                    fun(str2,sweetAlertDialog1,view,viewriddle,r2,pc2,d);
 
                 }
                 else if(myResult.equalsIgnoreCase("qwazxcvbasdfghzxcvbnm")){
-                    fun(str3,sweetAlertDialog1,view,viewriddle,r3,pc3);
+                    image_th.setVisibility(View.VISIBLE);
+                    Drawable drawable= getResources().getDrawable(R.drawable.route14);
+                    fun(str3,sweetAlertDialog1,view,viewriddle,r3,pc3,drawable);
 
                 }
                 else if(myResult.equalsIgnoreCase("zxcvbnmasdfghjkqwertyucvbn")){
-                    fun(str4,sweetAlertDialog1,view,viewriddle,r4,pc4);
+                    image_th.setVisibility(View.GONE);
+                    crackertext.setVisibility(View.GONE);
+                    fun(str4,sweetAlertDialog1,view,viewriddle,r4,pc4,d);
 
                 }
                 else if(myResult.equalsIgnoreCase("mbvcxzsdfghjkiuytrefghj")){
-                    fun(str5,sweetAlertDialog1,view,viewriddle,r5,pc5);
+                    image_th.setVisibility(View.GONE);
+                    fun(str5,sweetAlertDialog1,view,viewriddle,r5,pc5,d);
 
                 }
                 else if(myResult.equalsIgnoreCase("qwertyujmnbvcxzxdfghjklol")){
-                    fun(str6,sweetAlertDialog1,view,viewriddle,r6,pc6);
+                    image_th.setVisibility(View.GONE);
+                    fun(str6,sweetAlertDialog1,view,viewriddle,r6,pc6,d);
 
                 }
                 else if(myResult.equalsIgnoreCase("qwertyuikmxcvbdfghjkpoiuyh")){
-                    fun(str7,sweetAlertDialog1,view,viewriddle,r7,pc7);
+                    image_th.setVisibility(View.VISIBLE);
+                    Drawable drawable = getResources().getDrawable(R.drawable.route24);
+                    fun(str7,sweetAlertDialog1,view,viewriddle,r7,pc7,drawable);
 
                 }
                 else if(myResult.equalsIgnoreCase("unhggrvth hyunbgh jkdjjdjd")){
-                    fun(str8,sweetAlertDialog1,view,viewriddle,r8,pc8);
+                    image_th.setVisibility(View.GONE);
+                    crackertext.setVisibility(View.GONE);
+                    fun(str8,sweetAlertDialog1,view,viewriddle,r8,pc8,d);
 
                 }
                 else if(myResult.equalsIgnoreCase("bgbsteheyeurjjhtjtjtutkkdjed")){
-                    fun(str9,sweetAlertDialog1,view,viewriddle,r9,pc9);
+                    image_th.setVisibility(View.GONE);
+                    fun(str9,sweetAlertDialog1,view,viewriddle,r9,pc9,d);
 
                 }
                 else if(myResult.equalsIgnoreCase("qwefgbnmasdfghzxcvbqwertasdfcvb")){
-                    fun(str10,sweetAlertDialog1,view,viewriddle,r10,pc10);
+                    image_th.setVisibility(View.GONE);
+                    fun(str10,sweetAlertDialog1,view,viewriddle,r10,pc10,d);
 
                 }
                 else if(myResult.equalsIgnoreCase("pllnjjhghbgsnbdhenbehnd")){
-                    fun(str11,sweetAlertDialog1,view,viewriddle,r11,pc11);
+                    image_th.setVisibility(View.VISIBLE);
+                    Drawable drawable = getResources().getDrawable(R.drawable.route34);
+                    fun(str11,sweetAlertDialog1,view,viewriddle,r11,pc11,drawable);
 
                 }
                 else if(myResult.equalsIgnoreCase("qqwertyuasdfghjksdfghjk")){
-                    fun(str12,sweetAlertDialog1,view,viewriddle,r12,pc12);
+                    image_th.setVisibility(View.GONE);
+                    crackertext.setVisibility(View.GONE);
+                    fun(str12,sweetAlertDialog1,view,viewriddle,r12,pc12,d);
 
                 }
+                else{
+                    final SweetAlertDialog sweetAlertDialog12 = new SweetAlertDialog(TreasurehuntActivity.this, SweetAlertDialog.ERROR_TYPE);
+                    sweetAlertDialog12.setTitleText("Oops...");
+                    sweetAlertDialog12.setContentText("This is a FAKE QR!");
+                    sweetAlertDialog12.setConfirmButton("Retry", new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sweetAlertDialog) {
+                            scannerView.resumeCameraPreview(TreasurehuntActivity.this);
+                            sweetAlertDialog12.dismiss();
+                        }
+                    });
+                    sweetAlertDialog12.show();
+                }
+
 
                 /*if (result.getText().equalsIgnoreCase(enterpassword.getText().toString())) {
                     final SweetAlertDialog sweetAlertDialog2 = new SweetAlertDialog(TreasurehuntActivity.this, SweetAlertDialog.SUCCESS_TYPE);
@@ -343,6 +389,7 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
 
             }
         });
+        sweetAlertDialog1.setCancelable(false);
         sweetAlertDialog1.show();
 
 
@@ -370,7 +417,7 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
         dialog.show();*/
     }
 
-    public void fun(String result, final SweetAlertDialog sweetAlertDialog1, final View view, final View viewriddle, final String riddletext, final String crackertext) {
+    public void fun(String result, final SweetAlertDialog sweetAlertDialog1, final View view, final View viewriddle, final String riddletext, final String crackertext, final Drawable drawable) {
         if (result.equalsIgnoreCase(enterpassword.getText().toString())) {
             final SweetAlertDialog sweetAlertDialog2 = new SweetAlertDialog(TreasurehuntActivity.this, SweetAlertDialog.SUCCESS_TYPE);
             sweetAlertDialog2.setTitle("Great Job!");
@@ -379,7 +426,8 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
                 @Override
                 public void onClick(SweetAlertDialog sweetAlertDialog) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(TreasurehuntActivity.this);
-                    builder.setTitle("NEXT QUESTION");
+                    builder.setTitle("Next Question");
+                    Toast.makeText(getApplicationContext(),"Take a SCREENSHOT",Toast.LENGTH_LONG).show();
                                 /*builder.setMessage("Riddle 4\n" +
                                         "Go to a place where people stand\n" +
                                         "The roads are wide and the vehicles grand\n" +
@@ -392,20 +440,20 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
                                         "What virus was Pepper Potts injected with in Iron Man 3?\n" +
                                         "What is the name of star lords mother?\n" +
                                         "which of the infinity stones can alter reality?");*/
-                    builder.setPositiveButton("Take Screenshot", new DialogInterface.OnClickListener() {
+                    builder.setPositiveButton("Press this after taking a SCREENSHOT!!", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
 
                             Bitmap bitmap_hiddenview = ScreenShott.getInstance().takeScreenShotOfRootView(viewriddle);
                             try {
-                                file = ScreenShott.getInstance().saveScreenshotToPicturesFolder(getApplicationContext(), bitmap_hiddenview, "my_screenshot_filename");
+                                file = saveScreenshotToPicturesFolder(getApplicationContext(), bitmap_hiddenview, "my_screenshot_filename");
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
 
 
                             //notification
-                            Intent intent = new Intent(TreasurehuntActivity.this, TreasurehuntActivity.class);
+                            Intent intent = new Intent();
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             PendingIntent pendingIntent = PendingIntent.getActivity(TreasurehuntActivity.this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
                             Context context = getApplicationContext();
@@ -413,8 +461,8 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
                             NotificationCompat.Builder builder = new NotificationCompat.Builder(TreasurehuntActivity.this, channelId)
                                     .setSmallIcon(R.drawable.notificationicon)
                                     //.setLargeIcon(bitmap)
-                                    .setContentTitle("Screenshot Saved")
-                                    .setContentText("Open Gallery to see screenshot")
+                                    .setContentTitle("Congratulations")
+                                    .setContentText("You are one step closer!!")
                                     .setDefaults(Notification.DEFAULT_ALL)
                                     .setPriority(Notification.PRIORITY_HIGH);
                             //.setStyle(new NotificationCompat.BigTextStyle().bigText(body));
@@ -442,12 +490,21 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
                     sweetAlertDialog2.dismiss();
                     riddle.setText(riddletext);
                     cracker.setText(crackertext);
+                    image_th.setImageDrawable(drawable);
                     builder.setView(viewriddle);
-                    AlertDialog alertDialog = builder.create();
-                    //alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.main_blue_color));
+                    final AlertDialog alertDialog = builder.create();
+                    alertDialog.setOnShowListener( new DialogInterface.OnShowListener() {
+                        @Override
+                        public void onShow(DialogInterface arg0) {
+                            alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setBackgroundColor(getResources().getColor(android.R.color.holo_red_dark));
+                            alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(android.R.color.white));
+                        }
+                    });
+                    alertDialog.setCancelable(false);
                     alertDialog.show();
                 }
             });
+            sweetAlertDialog2.setCancelable(false);
             sweetAlertDialog2.show();
             //riddle.setText("This is the next riddle");
             //cracker.setText("Solve this password cracker");
@@ -467,6 +524,41 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
             });
             sweetAlertDialog3.show();
         }
+        scannerView.resumeCameraPreview(TreasurehuntActivity.this);
 
     }
+
+    public File saveScreenshotToPicturesFolder(Context context, Bitmap image, String filename)
+            throws Exception {
+        File bitmapFile = getOutputMediaFile(filename);
+        if (bitmapFile == null) {
+            throw new NullPointerException("Error creating media file, check storage permissions!");
+        }
+        FileOutputStream fos = new FileOutputStream(bitmapFile);
+        image.compress(Bitmap.CompressFormat.PNG, 90, fos);
+        fos.close();
+
+        // Initiate media scanning to make the image available in gallery apps
+        MediaScannerConnection.scanFile(context, new String[] { bitmapFile.getPath() },
+                new String[] { "image/jpeg" }, null);
+        return bitmapFile;
+    }
+    private File getOutputMediaFile(String filename) {
+        // To be safe, you should check that the SDCard is mounted
+        // using Environment.getExternalStorageState() before doing this.
+        File mediaStorageDirectory = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)+"/Screenshots" + File.separator);
+        // Create the storage directory if it does not exist
+        if (!mediaStorageDirectory.exists()) {
+            if (!mediaStorageDirectory.mkdirs()) {
+                return null;
+            }
+        }
+        // Create a media file name
+        String timeStamp = new SimpleDateFormat("ddMMyyyy_HHmmss").format(new Date());
+        File mediaFile;
+        String mImageName = filename + timeStamp + ".jpg";
+        mediaFile = new File(mediaStorageDirectory.getPath() + File.separator + mImageName);
+        return mediaFile;
+    }
+
 }
