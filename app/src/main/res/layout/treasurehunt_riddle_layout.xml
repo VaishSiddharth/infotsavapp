@@ -11,17 +11,35 @@
     android:gravity="center"
     android:padding="20dp"
     tools:context=".Main_Activities.TreasurehuntActivity">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="ENTER PASSWORD"
+        android:text="RIDDLE"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/riddle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="20sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="PASSWORD CRACKER"
         android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/enterpassword"
+    <TextView
+        android:id="@+id/passwordcracker"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="20sp" />
 
 </LinearLayout>
