@@ -44,7 +44,12 @@ public class ContactusAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = View.inflate(mContext,R.layout.contactus_list,null);
+        View view = convertView;
+        if(view==null)
+        {
+            view = View.inflate(mContext,R.layout.contactus_list,null);
+        }
+       
         TextView person_name=(TextView)view.findViewById(R.id.person_name);
         Typeface font_person=Typeface.createFromAsset(mContext.getAssets(),"fonts/captainmarvel.otf");
         person_name.setTypeface(font_person);

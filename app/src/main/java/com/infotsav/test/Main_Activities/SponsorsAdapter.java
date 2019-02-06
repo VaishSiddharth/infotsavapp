@@ -41,7 +41,11 @@ public class SponsorsAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = View.inflate(mContext,R.layout.sponsors_list,null);
+        View view = convertView;
+        if(view==null)
+        {
+            view = View.inflate(mContext,R.layout.sponsors_list,null);
+        }
         TextView sponsor_name=(TextView)view.findViewById(R.id.sponsor_name);
         Typeface font_sponsor=Typeface.createFromAsset(mContext.getAssets(),"fonts/captainmarvel.otf");
         sponsor_name.setTypeface(font_sponsor);

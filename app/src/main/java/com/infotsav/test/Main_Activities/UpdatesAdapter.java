@@ -40,7 +40,11 @@ public class UpdatesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = View.inflate(mContext,R.layout.updates_list,null);
+        View view = convertView;
+        if(view==null)
+        {
+            view = View.inflate(mContext,R.layout.updates_list,null);
+        }
         TextView announcement_title=(TextView)view.findViewById(R.id.announcement_title);
         Typeface font_announcement=Typeface.createFromAsset(mContext.getAssets(),"fonts/captainmarvel.otf");
         announcement_title.setTypeface(font_announcement);
