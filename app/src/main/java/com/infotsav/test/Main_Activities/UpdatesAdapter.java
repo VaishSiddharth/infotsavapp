@@ -52,7 +52,6 @@ public class UpdatesAdapter extends BaseAdapter {
         announcement_datetime.setTypeface(font_announcement);
         TextView announcement_description=(TextView)view.findViewById(R.id.announcement_description);
         announcement_description.setTypeface(font_announcement);
-
         announcement_title.setText(mUpdates_detailslist.get(position).getAnnouncement_title());
         announcement_datetime.setText(mUpdates_detailslist.get(position).getAnnouncement_datetime());
         announcement_description.setText(mUpdates_detailslist.get(position).getAnnouncement_desc());

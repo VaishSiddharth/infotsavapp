@@ -65,7 +65,8 @@ public class UpdatesActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 lvupdates=(ListView)findViewById(R.id.listview_updates);
-                adapter=new UpdatesAdapter(getApplicationContext(), mUpdates_detailslist);
+                adapter=new UpdatesAdapter(UpdatesActivity.this
+                        , mUpdates_detailslist);
                 lvupdates.setAdapter(adapter);
             }
             @Override
