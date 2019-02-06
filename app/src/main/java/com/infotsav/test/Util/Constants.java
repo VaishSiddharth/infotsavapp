@@ -54,4 +54,87 @@ public class Constants {
     public static final String fact21="The Marvel Cinematic Universe is the highest-grossing film franchise of all time";
     public static final String fact22="While Deadpool is a Marvel property, it is not (currently) part of the Marvel Cinematic Universe";
     public static int indexval=0;
+
+    public static String r1="The place we gather twice a year,\n" +
+            "Where we look all above sky,\n" +
+            "Remembering the heroes of life";
+    public static String pc1="What legislation requires superhumans to be governed by law?";
+    public static String r2="To solve the hunt you must get\n" +
+            "Into the room\n" +
+            "Crammed with tech and full of code\n" +
+            "The clue is hidden in this abode";
+    public static String pc2="Which planet are Thor and the Hulk on in Thor: Ragnarok?";
+    public static String r3="Go to a place where people stand\n" +
+            "The roads are wide and the vehicles grand\n" +
+            "This the place where the coaches stop";
+    public static String pc3="Your Answer has 9 letters with one the letter as “U”. find the other words by filling the table\n" +
+            "What does the word I stand for in the acronym S.H.I.E.L.D ?\n" +
+            "What is the name of the Super Soldier project in Captain America: The First Avenger?\n" +
+            "What alien race does Ronan the Accuser belong to?\n" +
+            "What virus was Pepper Potts injected with in Iron Man 3?\n" +
+            "What is the name of star lords mother?\n" +
+            "which of the infinity stones can alter reality?";
+    public static String r4="A room full of stares \n" +
+            "Cramped with people……………\n" +
+            "Going round and round…………… \n" +
+            "Am I easy to find? probably not!!\n" +
+            "But you have crossed me before!! ";
+    public static String r5="A place of all love\n" +
+            "With balls from above\n" +
+            "The way you must get\n" +
+            "Is split with a net";
+    public static String pc5="What is the real name red skull";
+    public static String r6="Take note of all I say\n" +
+            "Observed only by day\n" +
+            "Looked at by all bar teach\n" +
+            "With pen to me you reach";
+    public static String pc6="In Guardians of the Galaxy, what is the name of the dog in the Collector Taneleer Tivan's museum?";
+    public static String r7="Caution is needed going this way\n" +
+            "A tarmac place of bay bay bay\n" +
+            "Now is the time to leave \n" +
+            "If you leave from here you’ll go far";
+    public static String pc7="Your Answer contains 10 letters with one of the letter as “L” find the remaining words by filling the table\n" +
+            "What does the word I stand for in the acronym S.H.I.E.L.D ?\n" +
+            "What is the name of the Super Soldier project in Captain America: The First Avenger?\n" +
+            "What alien race does Ronan the Accuser belong to?\n" +
+            "What virus was Pepper Potts injected with in Iron Man 3?\n" +
+            "What is the name of star lords mother?\n" +
+            "which of the infinity stones can alter reality?";
+    public static String r8="A room full of stares \n" +
+            "Cramped with people……………\n" +
+            "Going round and round…………… \n" +
+            "Am I easy to find? probably not!!\n" +
+            "But you have crossed me before!! ";
+    public static String r9="I have no voice but I can teach you all there is to know.\n" +
+            "I have spines and hinges but I am not a door.\n" +
+            "Once I’ve told you all, I cannot tell you more.\n" +
+            "What am I?";
+    public static String pc9="How many versions of the Iron Man armor has Tony Stark made?";
+    public static String r10="The room darker than night\n" +
+            "Which is only known to a few\n" +
+            "With a stink and an eight ";
+    public static String pc10="What is the homeworld of frost gaints called?";
+    public static String r11="Close to the words of life stay I,\n" +
+            "But I wither, wane, and grow dry.";
+    public static String pc11="Your Answer contains 6 letter with one of the letter as “C” find the other words by filling the table\n" +
+            "\n" +
+            "What does the word I stand for in the acronym S.H.I.E.L.D ?\n" +
+            "What is the name of the Super Soldier project in Captain America: The First Avenger?\n" +
+            "What alien race does Ronan the Accuser belong to?\n" +
+            "What virus was Pepper Potts injected with in Iron Man 3?\n" +
+            "What is the name of star lords mother?\n" +
+            "which of the infinity stones can alter reality?";
+    public static String r12="A room full of stares \n" +
+            "Cramped with people……………\n" +
+            "Going round and round…………… \n" +
+            "Am I easy to find? probably not!!\n" +
+            "But you have crossed me before!! ";
+    public static String pc4="";
+    public static String pc8="";
+    public static String pc12="";
+    public static String pcfake="This is a Fake QR";
+    public static String rfake="Try another QR";
+
+
+
 }

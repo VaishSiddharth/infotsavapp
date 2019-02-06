@@ -5,31 +5,23 @@
     android:id="@+id/comingsoonlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    android:layout_margin="40dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:padding="20dp"
     tools:context=".Main_Activities.TreasurehuntActivity">
-
     <TextView
-        android:id="@+id/registernow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="@font/deadpoolfont"
-        android:gravity="center"
-        android:textColor="@android:color/white"
-        android:text="REGISTER NOW"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/comingsoon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="@android:color/white"
-        android:fontFamily="@font/deadpoolfont"
-        android:text="COMING SOON..."
-        android:visibility="gone"/>
+        android:text="ENTER PASSWORD"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/enterpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
