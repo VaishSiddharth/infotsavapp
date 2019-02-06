@@ -140,6 +140,14 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
                 requestPermission();
             }
         }
+        else {
+            if (scannerView == null) {
+                scannerView = new ZXingScannerView(this);
+                setContentView(scannerView);
+            }
+            scannerView.setResultHandler(this);
+            scannerView.startCamera();
+        }
     }
 
     @Override
