@@ -50,6 +50,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:autoLink="web"
+                android:linksClickable="true"
                 android:layout_margin="5dp"
                 android:fontFamily="@font/captianmarvelfont"
                 android:padding="1dp"
