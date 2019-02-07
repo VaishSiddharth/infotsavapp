@@ -227,21 +227,25 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
 
                 } else if (myResult.equalsIgnoreCase("fghjrtyuiodfghjkldfghjkl;")) {
                     image_th.setVisibility(View.GONE);
-                    fun(str2, sweetAlertDialog1, view, viewriddle, r2, pc2, d);
+                    if(!(fun(str2, sweetAlertDialog1, view, viewriddle, r2, pc2, d)))
+                        wrongansOOPS(sweetAlertDialog1);
 
                 } else if (myResult.equalsIgnoreCase("qwazxcvbasdfghzxcvbnm")) {
                     image_th.setVisibility(View.VISIBLE);
                     Drawable drawable = getResources().getDrawable(R.drawable.route14);
-                    fun(str3, sweetAlertDialog1, view, viewriddle, r3, pc3, drawable);
+                    if (!(fun(str3, sweetAlertDialog1, view, viewriddle, r3, pc3, drawable)))
+                        wrongansOOPS(sweetAlertDialog1);
 
                 } else if (myResult.equalsIgnoreCase("zxcvbnmasdfghjkqwertyucvbn")) {
                     image_th.setVisibility(View.GONE);
                     crackertext.setVisibility(View.GONE);
-                    fun(str4, sweetAlertDialog1, view, viewriddle, r4, pc4, d);
+                    if(!(fun(str4, sweetAlertDialog1, view, viewriddle, r4, pc4, d)))
+                        wrongansOOPS(sweetAlertDialog1);
 
                 } else if (myResult.equalsIgnoreCase("mbvcxzsdfghjkiuytrefghj")) {
                     image_th.setVisibility(View.GONE);
-                    fun(str5, sweetAlertDialog1, view, viewriddle, r5, pc5, d);
+                    if(!(fun(str5, sweetAlertDialog1, view, viewriddle, r5, pc5, d)))
+                    wrongansOOPS(sweetAlertDialog1);
 
                 } else if (myResult.equalsIgnoreCase("qwertyujmnbvcxzxdfghjklol")) {
                     image_th.setVisibility(View.GONE);
@@ -251,16 +255,19 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
                 } else if (myResult.equalsIgnoreCase("qwertyuikmxcvbdfghjkpoiuyh")) {
                     image_th.setVisibility(View.VISIBLE);
                     Drawable drawable = getResources().getDrawable(R.drawable.route24);
-                    fun(str7, sweetAlertDialog1, view, viewriddle, r7, pc7, drawable);
+                    if(!(fun(str7, sweetAlertDialog1, view, viewriddle, r7, pc7, drawable)))
+                        wrongansOOPS(sweetAlertDialog1);
 
                 } else if (myResult.equalsIgnoreCase("unhggrvth hyunbgh jkdjjdjd")) {
                     image_th.setVisibility(View.GONE);
                     crackertext.setVisibility(View.GONE);
-                    fun(str8, sweetAlertDialog1, view, viewriddle, r8, pc8, d);
+                    if(!(fun(str8, sweetAlertDialog1, view, viewriddle, r8, pc8, d)))
+                        wrongansOOPS(sweetAlertDialog1);;
 
                 } else if (myResult.equalsIgnoreCase("bgbsteheyeurjjhtjtjtutkkdjed")) {
                     image_th.setVisibility(View.GONE);
-                    fun(str9, sweetAlertDialog1, view, viewriddle, r9, pc9, d);
+                    if(!(fun(str9, sweetAlertDialog1, view, viewriddle, r9, pc9, d)))
+                        wrongansOOPS(sweetAlertDialog1);
 
                 } else if (myResult.equalsIgnoreCase("qwefgbnmasdfghzxcvbqwertasdfcvb")) {
                     image_th.setVisibility(View.GONE);
@@ -271,12 +278,14 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
                 } else if (myResult.equalsIgnoreCase("pllnjjhghbgsnbdhenbehnd")) {
                     image_th.setVisibility(View.VISIBLE);
                     Drawable drawable = getResources().getDrawable(R.drawable.route34);
-                    fun(str11, sweetAlertDialog1, view, viewriddle, r11, pc11, drawable);
+                    if(!(fun(str11, sweetAlertDialog1, view, viewriddle, r11, pc11, drawable)))
+                        wrongansOOPS(sweetAlertDialog1);
 
                 } else if (myResult.equalsIgnoreCase("qqwertyuasdfghjksdfghjk")) {
                     image_th.setVisibility(View.GONE);
                     crackertext.setVisibility(View.GONE);
-                    fun(str12, sweetAlertDialog1, view, viewriddle, r12, pc12, d);
+                    if(!(fun(str12, sweetAlertDialog1, view, viewriddle, r12, pc12, d)))
+                        wrongansOOPS(sweetAlertDialog1);
 
                 } else {
                     final SweetAlertDialog sweetAlertDialog12 = new SweetAlertDialog(TreasurehuntActivity.this, SweetAlertDialog.ERROR_TYPE);
@@ -443,7 +452,7 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
     }
 
     public boolean fun(String result, final SweetAlertDialog sweetAlertDialog1, final View view, final View viewriddle, final String riddletext, final String crackertext, final Drawable drawable) {
-        if (result.equalsIgnoreCase(enterpassword.getText().toString())) {
+        if (result.equalsIgnoreCase(enterpassword.getText().toString().trim())) {
             final SweetAlertDialog sweetAlertDialog2 = new SweetAlertDialog(TreasurehuntActivity.this, SweetAlertDialog.SUCCESS_TYPE);
             sweetAlertDialog2.setTitle("Great Job!");
             sweetAlertDialog2.setContentText("PRESS Done to see next RIDDLE & PASSWORD CRACKER");
