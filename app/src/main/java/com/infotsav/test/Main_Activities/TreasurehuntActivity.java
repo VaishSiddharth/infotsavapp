@@ -221,8 +221,9 @@ public class TreasurehuntActivity extends AppCompatActivity implements ZXingScan
                     image_th.setVisibility(View.GONE);
                     if (!(fun(str1, sweetAlertDialog1, view, viewriddle, r1, pc1, d) || fun("Worldwar 2", sweetAlertDialog1, view, viewriddle, r1, pc1, d) || fun("World war two", sweetAlertDialog1, view, viewriddle, r1, pc1, d)
                             || fun("worldwar two", sweetAlertDialog1, view, viewriddle, r1, pc1, d) || fun("worldwar2", sweetAlertDialog1, view, viewriddle, r1, pc1, d))
-                            || fun("worldwartwo", sweetAlertDialog1, view, viewriddle, r1, pc1, d)) { wrongansOOPS(sweetAlertDialog1);
-                    }
+                            || fun("worldwartwo", sweetAlertDialog1, view, viewriddle, r1, pc1, d)||fun("worldwar II", sweetAlertDialog1, view, viewriddle, r1, pc1, d)||
+                    fun("world war II", sweetAlertDialog1, view, viewriddle, r1, pc1, d))
+                     wrongansOOPS(sweetAlertDialog1);
 
                 } else if (myResult.equalsIgnoreCase("fghjrtyuiodfghjkldfghjkl;")) {
                     image_th.setVisibility(View.GONE);
