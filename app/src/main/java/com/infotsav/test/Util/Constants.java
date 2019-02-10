@@ -67,7 +67,7 @@ public class Constants {
     public static String r3="Go to a place where people stand\n" +
             "The roads are wide and the vehicles grand\n" +
             "This the place where the coaches stop";
-    public static String pc3="Your Answer has 9 letters with one the letter as “U”. find the other words by filling the table\n" +
+    public static String pc3="Your Answer has 9 letters with one of the letter as “U”. find the other words by filling the table\n" +
             "What does the word I stand for in the acronym S.H.I.E.L.D ?\n" +
             "What is the name of the Super Soldier project in Captain America: The First Avenger?\n" +
             "What alien race does Ronan the Accuser belong to?\n" +
